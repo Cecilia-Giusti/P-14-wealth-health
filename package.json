@@ -13,10 +13,10 @@
     "@types/react-dom": "^18.0.6",
     "datetimepicker-react-component": "^1.0.2",
     "react": "^18.2.0",
-    "react-base-table": "^1.13.2",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.55.0",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed"
   },
   "eslintConfig": {
     "extends": [
