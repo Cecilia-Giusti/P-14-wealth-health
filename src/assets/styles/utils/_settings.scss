@@ -1,1 +1,91 @@
+* {
+  box-sizing: border-box;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+}
 
+body {
+  background: url("./assets/images/background-image.png") no-repeat center/cover;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+}
+
+header {
+  height: 90vh;
+  width: 20%;
+  max-width: 300px;
+}
+main {
+  height: 90vh;
+  width: 80%;
+  background: #ffffff;
+  border-radius: 0px 10px 10px 0px;
+}
+
+ul {
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+
+  &:visited {
+    color: #000;
+  }
+}
+
+//Mixins
+
+@mixin titleNav {
+  font-family: $fontTitle;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 24px;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  color: #000;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+@mixin titlePage {
+  font-family: $fontTitle;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 39px;
+  font-variant: small-caps;
+  color: $color-primary;
+}
+
+@mixin titleForm {
+  font-family: $fontSubtitle;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  font-variant: small-caps;
+  color: $color-tertiary;
+}

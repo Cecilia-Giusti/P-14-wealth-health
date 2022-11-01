@@ -10,10 +10,10 @@ const Header = () => {
       <nav>
         <ul>
           <NavLink to={"/"}>
-            <li>Create employee</li>
+            <li>create employee</li>
           </NavLink>
           <NavLink to={"/current-employees"}>
-            <li>Current employees</li>
+            <li>current employees</li>
           </NavLink>
         </ul>
       </nav>
