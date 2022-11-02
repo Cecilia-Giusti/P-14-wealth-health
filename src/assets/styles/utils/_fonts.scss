@@ -1,5 +1,14 @@
 // Import montserra font
-@import url("https://fonts.googleapis.com/css2? family= Montserrat:wght@500;600 & display=swap");
+@font-face {
+  font-family: "MontSerra";
+  src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf) format(truetype);
+}
 
 // Import Lora font
-@import url("https://fonts.googleapis.com/css2? family= Lora & display=swap");
+@font-face {
+  font-family: "Lora";
+  src: url(./assets/fonts/Lora-VariableFont_wght.ttf) format(truetype);
+}
+
+$fontTitle: "MontSerra", sans-serif;
+$fontSubtitle: "Lora", serif;

@@ -1,0 +1,14 @@
+input[type="submit"] {
+  height: 30px;
+  width: 100px;
+  background: $color-primary;
+  border-radius: 40px;
+  color: white;
+  @include titleButton;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: $color-secondary;
+  }
+}
