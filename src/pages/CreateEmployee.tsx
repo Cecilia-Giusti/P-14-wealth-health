@@ -1,8 +1,15 @@
-// import { DateInput } from "datetimepicker-react-component";
+// import { useState } from "react";
+// import ReactDateInputs from "react-date-inputs";
 
+import { DropdownMenu } from "@cecigiu2b/dropdown-menu-react";
+import { departements } from "../data/departments";
+import { states } from "../data/states";
 // const dateInput = () => {};
 
 const CreateEmployee = () => {
+  // const [birthday, setBirthday] = useState(new Date());
+  // const birthdayFor = { htmlFor: "birthday" };
+
   return (
     <main>
       <h1>Create Employee</h1>
@@ -17,18 +24,34 @@ const CreateEmployee = () => {
               <label htmlFor="lastName">Last Name</label>
               <input type="text" name="lastName" />
             </div>
+            {/* <div> */}
+            {/* <label htmlFor="birthday">Birthday</label> */}
+            {/* <ReactDateInputs
+                className="dateInput"
+                label="birthday"
+                value={birthday}
+                onChange={setBirthday}
+                labelComponentProps={birthdayFor}
+              />
+            </div> */}
             <div>
               <label htmlFor="birthday">Birthday</label>
               <input type="date" name="birthday" />
             </div>
-            {/* <DateInput name="birthday" onChange={dateInput} /> */}
+
             <div>
               <label htmlFor="startDay">Start day</label>
               <input type="date" name="startDay" />
             </div>
             <div>
               <label htmlFor="departments">Department</label>
-              <select name="departments"></select>
+
+              <DropdownMenu
+                name="departements"
+                options={departements}
+                customClassSelect="selectDepartement"
+                customClassOption="optionDepartement"
+              />
             </div>
           </div>
           <div className="form__content--right">
@@ -42,7 +65,12 @@ const CreateEmployee = () => {
             </div>
             <div>
               <label htmlFor="states">State</label>
-              <select name="states"></select>
+              <DropdownMenu
+                name="states"
+                options={states}
+                customClassSelect="selectStates"
+                customClassOption="optionStates"
+              />
             </div>
             <div>
               <label htmlFor="zipCode">Zip Code</label>

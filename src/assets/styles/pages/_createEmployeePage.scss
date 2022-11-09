@@ -63,7 +63,8 @@ main {
       }
 
       input,
-      select {
+      select,
+      .dateInput {
         border: none;
         border-bottom: 1px solid $color-border-input;
       }
