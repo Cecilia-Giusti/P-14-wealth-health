@@ -18,7 +18,7 @@ const CreateEmployee = () => {
           <div className="form__content--left">
             <div>
               <label htmlFor="firstName">First Name</label>
-              <input type="text" name="firstName" />
+              <input type="text" name="firstName" autoFocus />
             </div>
             <div>
               <label htmlFor="lastName">Last Name</label>
