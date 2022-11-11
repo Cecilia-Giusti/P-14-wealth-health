@@ -73,6 +73,26 @@ main {
           outline: none;
         }
       }
+
+      .react-datepicker-wrapper,
+      .react-datepicker__input-container {
+        display: block;
+        width: 100%;
+      }
+      .react-datepicker {
+        display: inherit;
+      }
+
+      .react-datepicker-popper,
+      .react-datepicker-popper div,
+      .react-datepicker {
+        display: block;
+        width: 100%;
+      }
+
+      .birthdayDate {
+        width: 100%;
+      }
     }
 
     .form__buttons {

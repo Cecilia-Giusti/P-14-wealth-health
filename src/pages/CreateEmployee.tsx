@@ -1,14 +1,14 @@
-// import { useState } from "react";
-// import ReactDateInputs from "react-date-inputs";
-
 import { DropdownMenu } from "@cecigiu2b/dropdown-menu-react";
+import { useState } from "react";
 import { departements } from "../data/departments";
 import { states } from "../data/states";
-// const dateInput = () => {};
 
 const CreateEmployee = () => {
-  // const [birthday, setBirthday] = useState(new Date());
-  // const birthdayFor = { htmlFor: "birthday" };
+  const [departementValue, setDepartementValue] = useState(null);
+  const [stateValue, setStateValue] = useState(null);
+
+  console.log(departementValue);
+  console.log(stateValue);
 
   return (
     <main>
@@ -24,16 +24,6 @@ const CreateEmployee = () => {
               <label htmlFor="lastName">Last Name</label>
               <input type="text" name="lastName" />
             </div>
-            {/* <div> */}
-            {/* <label htmlFor="birthday">Birthday</label> */}
-            {/* <ReactDateInputs
-                className="dateInput"
-                label="birthday"
-                value={birthday}
-                onChange={setBirthday}
-                labelComponentProps={birthdayFor}
-              />
-            </div> */}
             <div>
               <label htmlFor="birthday">Birthday</label>
               <input type="date" name="birthday" />
@@ -51,6 +41,7 @@ const CreateEmployee = () => {
                 options={departements}
                 customClassSelect="selectDepartement"
                 customClassOption="optionDepartement"
+                getValue={setDepartementValue}
               />
             </div>
           </div>
@@ -70,6 +61,7 @@ const CreateEmployee = () => {
                 options={states}
                 customClassSelect="selectStates"
                 customClassOption="optionStates"
+                getValue={setStateValue}
               />
             </div>
             <div>

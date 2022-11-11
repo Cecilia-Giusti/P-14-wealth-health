@@ -4,6 +4,7 @@ declare module "@cecigiu2b/dropdown-menu-react" {
     options: Array<any>;
     customClassSelect?: string;
     customClassOption?: string;
+    getValue: Dispatch<React.SetStateAction<string | null>>;
   }>;
   export { DropdownMenu };
 }
