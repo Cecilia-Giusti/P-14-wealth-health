@@ -2,13 +2,18 @@ import { DropdownMenu } from "@cecigiu2b/dropdown-menu-react";
 import { useState } from "react";
 import { departements } from "../data/departments";
 import { states } from "../data/states";
+import DatePicker from "react-datepicker";
 
 const CreateEmployee = () => {
   const [departementValue, setDepartementValue] = useState(null);
   const [stateValue, setStateValue] = useState(null);
 
+  const [birthday, setBirthday] = useState(new Date());
+  const [startDay, setStartDay] = useState(new Date());
+
   console.log(departementValue);
   console.log(stateValue);
+  console.log(birthday);
 
   return (
     <main>
@@ -16,26 +21,36 @@ const CreateEmployee = () => {
       <form>
         <div className="form__content">
           <div className="form__content--left">
-            <div>
+            <div className="firstName__content">
               <label htmlFor="firstName">First Name</label>
               <input type="text" name="firstName" autoFocus />
             </div>
-            <div>
+            <div className="lastName__content">
               <label htmlFor="lastName">Last Name</label>
               <input type="text" name="lastName" />
             </div>
-            <div>
+
+            <div className="birthday__content">
               <label htmlFor="birthday">Birthday</label>
-              <input type="date" name="birthday" />
+              <DatePicker
+                className="dateInput"
+                selected={birthday}
+                onChange={(date: Date) => setBirthday(date)}
+              />
+              <i className="fa-regular fa-calendar dateInput__icon"></i>
             </div>
 
-            <div>
+            <div className="startDay__content">
               <label htmlFor="startDay">Start day</label>
-              <input type="date" name="startDay" />
+              <DatePicker
+                className="dateInput"
+                selected={startDay}
+                onChange={(date: Date) => setStartDay(date)}
+              />
+              <i className="fa-regular fa-calendar dateInput__icon"></i>
             </div>
-            <div>
+            <div className="departements__content">
               <label htmlFor="departments">Department</label>
-
               <DropdownMenu
                 name="departements"
                 options={departements}

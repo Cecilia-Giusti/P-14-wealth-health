@@ -40,7 +40,11 @@ main {
         grid-template-rows: repeat(5, 1fr);
         row-gap: 20px;
 
-        div {
+        .firstName__content,
+        .lastName__content,
+        .birthday__content,
+        .startDay__content,
+        .departements__content {
           display: grid;
           grid-template-columns: 40% 50%;
         }
@@ -68,30 +72,40 @@ main {
         border: none;
         border-bottom: 1px solid $color-border-input;
         padding-left: 10px;
+        text-align: center;
 
         &:focus-visible {
           outline: none;
         }
       }
 
-      .react-datepicker-wrapper,
-      .react-datepicker__input-container {
-        display: block;
-        width: 100%;
-      }
-      .react-datepicker {
-        display: inherit;
+      select,
+      .dateInput,
+      .input[type="date" i] {
+        cursor: pointer;
       }
 
-      .react-datepicker-popper,
-      .react-datepicker-popper div,
-      .react-datepicker {
-        display: block;
+      .dateInput__content {
+        position: relative;
+      }
+
+      .dateInput {
         width: 100%;
       }
 
-      .birthdayDate {
-        width: 100%;
+      .birthday__content,
+      .startDay__content {
+        position: relative;
+      }
+
+      .react-datepicker__navigation {
+        color: #000;
+      }
+
+      .dateInput__icon {
+        position: absolute;
+        top: -3px;
+        right: 11%;
       }
     }
 
@@ -99,9 +113,32 @@ main {
       display: flex;
       gap: 30px;
     }
-
-    select {
-      cursor: pointer;
-    }
   }
+}
+
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::before {
+  position: absolute;
+  top: 8px;
+  left: -120px;
+  transform: rotate(270deg);
+}
+
+.react-datepicker__day--keyboard-selected {
+  background: $color-secondary-light;
+}
+.react-datepicker-popper[data-placement="top"]
+  .react-datepicker__triangle::after,
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::after {
+  border-bottom-color: #aeaeae;
+}
+
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::after {
+  position: absolute;
+  top: 8px;
+  left: 95px;
+  z-index: 1000;
+  transform: rotate(90deg);
 }
