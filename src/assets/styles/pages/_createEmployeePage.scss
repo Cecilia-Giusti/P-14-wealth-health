@@ -116,6 +116,13 @@ main {
   }
 }
 
+.optionDepartement,
+.optionStates {
+  background: $color-primary;
+  color: #fff;
+  cursor: pointer;
+}
+
 .react-datepicker-popper[data-placement^="bottom"]
   .react-datepicker__triangle::before {
   position: absolute;

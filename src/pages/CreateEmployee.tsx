@@ -12,7 +12,7 @@ const CreateEmployee = () => {
   const [birthday, setBirthday] = useState(new Date());
   const [startDay, setStartDay] = useState(new Date());
 
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   console.log(departementValue);
   console.log(stateValue);
@@ -22,9 +22,16 @@ const CreateEmployee = () => {
     e: React.MouseEvent<HTMLInputElement, MouseEvent>
   ) => {
     e.preventDefault();
+
+    //Vérification du formulaire
+
+    // Ajout dans le tableau
+
     setIsOpen(true);
   };
   const handleCloseModal = () => {
+    // Vider le formulaire
+
     setIsOpen(false);
   };
 
