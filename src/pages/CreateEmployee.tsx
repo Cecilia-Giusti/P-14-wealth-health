@@ -3,6 +3,7 @@ import { useState } from "react";
 import { departements } from "../data/departments";
 import { states } from "../data/states";
 import DatePicker from "react-datepicker";
+import Modal from "react-modal";
 
 const CreateEmployee = () => {
   const [departementValue, setDepartementValue] = useState(null);
@@ -11,9 +12,21 @@ const CreateEmployee = () => {
   const [birthday, setBirthday] = useState(new Date());
   const [startDay, setStartDay] = useState(new Date());
 
+  const [modalIsOpen, setIsOpen] = useState(true);
+
   console.log(departementValue);
   console.log(stateValue);
   console.log(birthday);
+
+  const handleOpenModal = (
+    e: React.MouseEvent<HTMLInputElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <main>
@@ -87,10 +100,28 @@ const CreateEmployee = () => {
         </div>
         <div className="form__buttons">
           {" "}
-          <input type="submit" value="SAVE" className="button" />
+          <input
+            type="submit"
+            value="SAVE"
+            className="button"
+            onClick={(e) => {
+              handleOpenModal(e);
+            }}
+          />
           <input type="submit" value="CANCEL" className="button" />
         </div>
       </form>
+
+      <Modal
+        isOpen={modalIsOpen}
+        className="modal"
+        contentLabel="Minimal Modal Example"
+      >
+        <button onClick={handleCloseModal}>
+          <i className="fa-regular fa-circle-xmark"></i>
+        </button>
+        <p>Employee created</p>
+      </Modal>
     </main>
   );
 };
