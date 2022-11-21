@@ -77,6 +77,10 @@ main {
         &:focus-visible {
           outline: none;
         }
+
+        &.border--error {
+          border-bottom: 1px solid red;
+        }
       }
 
       select,

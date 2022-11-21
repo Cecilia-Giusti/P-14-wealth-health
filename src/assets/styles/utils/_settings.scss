@@ -58,6 +58,14 @@ input[type="submit"] {
   border: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.error-message {
+  color: red;
+}
+
 //Mixins
 
 @mixin titleNav {
