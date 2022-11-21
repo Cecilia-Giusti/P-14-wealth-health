@@ -3,10 +3,10 @@ export interface newEmployeeInt {
   lastName?: string;
   birthday?: string;
   startDay?: string;
-  departement?: string;
+  departement?: string | null;
   street?: string;
   city?: string;
-  state?: string;
+  state?: string | null;
   zipCode?: string;
 }
 

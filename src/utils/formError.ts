@@ -4,8 +4,10 @@ const formError = (dataError: dataErrorInt) => {
   const firstNameDOM = document.querySelector(".firstName__content input");
   const lastNameDOM = document.querySelector(".lastName__content input");
   const birthdayDOM = document.querySelector(".birthday__content input");
+  const departementDOM = document.getElementById("departements");
   const streetDOM = document.querySelector(".street__content input");
   const cityDOM = document.querySelector(".city__content input");
+  const stateDOM = document.getElementById("states");
   const zipCodeDOM = document.querySelector(".zipCode__content input");
 
   dataError.firstName
@@ -17,12 +19,18 @@ const formError = (dataError: dataErrorInt) => {
   dataError.birthday
     ? birthdayDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : birthdayDOM?.removeAttribute("style");
+  dataError.departement
+    ? departementDOM?.setAttribute("style", "border-bottom: 1px solid red")
+    : departementDOM?.removeAttribute("style");
   dataError.street
     ? streetDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : streetDOM?.removeAttribute("style");
   dataError.city
     ? cityDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : cityDOM?.removeAttribute("style");
+  dataError.state
+    ? stateDOM?.setAttribute("style", "border-bottom: 1px solid red")
+    : stateDOM?.removeAttribute("style");
   dataError.zipCode
     ? zipCodeDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : zipCodeDOM?.removeAttribute("style");
