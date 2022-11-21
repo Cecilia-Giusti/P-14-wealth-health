@@ -6,6 +6,20 @@
     left: 3%;
   }
 
+  @media screen and (max-width: 600px) {
+    left: 5%;
+    top: 6%;
+  }
+
+  @media screen and (max-width: 500px) {
+    left: 6%;
+  }
+
+  @media screen and (max-width: 500px) {
+    top: 1%;
+    left: 0;
+  }
+
   .button__navbar {
     background: none;
     border: none;
@@ -32,5 +46,10 @@
 
   @media screen and (max-width: 920px) {
     visibility: visible;
+  }
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    top: 1%;
   }
 }

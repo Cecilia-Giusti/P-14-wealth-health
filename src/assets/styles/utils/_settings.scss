@@ -12,6 +12,10 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 400px) {
+    padding: 0px;
+    margin: 0;
+  }
 }
 
 #root {
@@ -27,18 +31,29 @@ header {
   height: 90vh;
   width: 20%;
   max-width: 300px;
+  @media screen and (max-width: 400px) {
+    height: 100vh;
+  }
 }
 .main {
   height: 90vh;
   width: 80%;
   background: #ffffff;
   border-radius: 0px 10px 10px 0px;
+  @media screen and (max-width: 400px) {
+    height: 100vh;
+    border-radius: 0px 0px 0px 0px;
+  }
 }
 
 .close {
   @media screen and (max-width: 920px) {
     width: 100%;
     border-radius: 10px 10px 10px 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    border-radius: 0px 0px 0px 0px;
   }
 }
 
