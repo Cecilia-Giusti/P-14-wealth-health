@@ -6,12 +6,12 @@ import {
   setErrorMessage,
   updateDataNoError,
 } from "../feature/errorFormSlice";
+import { addUser } from "../feature/usersSlice";
 
 const formCheck = async (
   dataForm: RefObject<HTMLFormElement>,
   departmentValue: string | null,
   stateValue: string | null,
-  setNewEmployee: React.Dispatch<React.SetStateAction<newEmployeeInt>>,
   dispatch: Dispatch<AnyAction>
 ) => {
   if (dataForm.current !== null) {
@@ -50,7 +50,7 @@ const formCheck = async (
         zipCode: zipCodeInput.value,
       };
 
-      setNewEmployee(newEmployee);
+      dispatch(addUser(newEmployee));
 
       return true;
     } else {

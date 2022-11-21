@@ -15,7 +15,6 @@ const CreateEmployee = () => {
   const dispatch = useAppDispatch();
 
   const dataNoError = useAppSelector((state) => state.errorForm.dataNoError);
-
   const errorMessageData = useAppSelector(
     (state) => state.errorForm.errorMessage
   );
@@ -27,7 +26,6 @@ const CreateEmployee = () => {
   const [startDay, setStartDay] = useState(new Date());
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [newEmployee, setNewEmployee] = useState({});
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -51,13 +49,7 @@ const CreateEmployee = () => {
     e.preventDefault();
 
     //Vérification du formulaire
-    const check = await formCheck(
-      form,
-      departementValue,
-      stateValue,
-      setNewEmployee,
-      dispatch
-    );
+    const check = await formCheck(form, departementValue, stateValue, dispatch);
 
     if (check) {
       dispatch(reset());
@@ -65,7 +57,6 @@ const CreateEmployee = () => {
       setModalIsOpen(true);
       console.log(check);
       // Ajout dans le tableau
-      console.log(newEmployee);
     }
   };
 
@@ -151,7 +142,12 @@ const CreateEmployee = () => {
         <div className="form__buttons">
           {" "}
           <input type="submit" value="SAVE" className="button" />
-          <input type="submit" value="CANCEL" className="button" />
+          <input
+            type="button"
+            value="CANCEL"
+            className="button"
+            onClick={handleCloseModal}
+          />
         </div>
       </form>
 
