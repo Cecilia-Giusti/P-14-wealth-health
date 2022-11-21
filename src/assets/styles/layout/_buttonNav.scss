@@ -20,6 +20,7 @@
 }
 
 #buttonNavClose {
+  visibility: hidden;
   background: none;
   border: none;
   width: 50px;
@@ -27,5 +28,9 @@
   i {
     color: $color-primary;
     font-size: 35px;
+  }
+
+  @media screen and (max-width: 920px) {
+    visibility: visible;
   }
 }

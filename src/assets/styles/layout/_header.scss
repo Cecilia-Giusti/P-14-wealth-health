@@ -5,7 +5,6 @@ header {
   flex-direction: column;
   @media screen and (max-width: 920px) {
     display: none;
-    transition-duration: 200ms;
   }
 
   .banner {
@@ -14,9 +13,17 @@ header {
     padding: 20px;
     align-items: flex-end;
     border-bottom: 1px solid #fff;
+    @media screen and (max-width: 920px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
 
     img {
       width: 50%;
+      @media screen and (max-width: 920px) {
+        display: none;
+      }
     }
 
     .title {
@@ -26,6 +33,10 @@ header {
       font-size: 20px;
       font-variant: small-caps;
       color: #006b61;
+
+      @media screen and (max-width: 400px) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -40,10 +51,31 @@ header {
     justify-content: center;
     align-items: center;
     border-right: 7px solid transparent;
+    @media screen and (max-width: 650px) {
+      font-size: 12px;
+      border-right: none;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 85%;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 10px;
+    }
 
     &:hover,
     .isActive {
       border-right: 5px solid $color-primary;
+      @media screen and (max-width: 550px) {
+        border-right: none;
+      }
     }
   }
 
