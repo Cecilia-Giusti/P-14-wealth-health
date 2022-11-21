@@ -28,11 +28,26 @@ header {
   width: 20%;
   max-width: 300px;
 }
-main {
+.main {
   height: 90vh;
   width: 80%;
   background: #ffffff;
   border-radius: 0px 10px 10px 0px;
+}
+
+.close {
+  @media screen and (max-width: 920px) {
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+  }
+}
+
+.open {
+  @media screen and (max-width: 920px) {
+    width: 70%;
+    border-radius: 0px 10px 10px 0px;
+    transition-duration: 150ms;
+  }
 }
 
 ul {
@@ -64,6 +79,14 @@ input[type="submit"] {
 
 .error-message {
   color: red;
+}
+
+.show {
+  display: block;
+}
+
+.notShow {
+  display: none;
 }
 
 //Mixins

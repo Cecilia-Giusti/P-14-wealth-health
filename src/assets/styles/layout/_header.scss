@@ -3,6 +3,10 @@ header {
   border-radius: 10px 0px 0px 10px;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 920px) {
+    display: none;
+    transition-duration: 200ms;
+  }
 
   .banner {
     display: flex;
@@ -52,4 +56,8 @@ header {
       color: $color-primary;
     }
   }
+}
+
+.header--tablet {
+  width: 30%;
 }

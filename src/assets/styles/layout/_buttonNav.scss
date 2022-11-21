@@ -1,0 +1,20 @@
+#buttonNav {
+  @media screen and (max-width: 920px) {
+    display: block;
+    position: absolute;
+    top: 6%;
+    left: 6%;
+  }
+
+  .button__navbar {
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+
+    i {
+      color: $color-primary;
+      font-size: 30px;
+    }
+  }
+}

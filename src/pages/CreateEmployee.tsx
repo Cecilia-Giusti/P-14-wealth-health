@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { reset } from "../feature/errorFormSlice";
 import formError from "../utils/formError";
 import errorMessage from "../utils/errorMessage";
+import { handleOpenNav } from "../utils/handleOpenNav";
 
 const CreateEmployee = () => {
   Modal.setAppElement("#root");
@@ -67,7 +68,12 @@ const CreateEmployee = () => {
   };
 
   return (
-    <main>
+    <main
+      className="main close"
+      onClick={() => {
+        handleOpenNav(dispatch, true);
+      }}
+    >
       <h1>Create Employee</h1>
       <span id="errorMessage" className="error-message hidden">
         Please complete correctly all fields
