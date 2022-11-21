@@ -1,15 +1,18 @@
-import { RefObject } from "react";
+import { RefObject, Dispatch } from "react";
+import { AnyAction } from "@reduxjs/toolkit";
 import { dataErrorInt, newEmployeeInt } from "../types/models";
-import errorMessage from "./errorMessage";
-import formError from "./formError";
+import {
+  setErrorForm,
+  setErrorMessage,
+  updateDataNoError,
+} from "../feature/errorFormSlice";
 
 const formCheck = async (
   dataForm: RefObject<HTMLFormElement>,
   departmentValue: string | null,
   stateValue: string | null,
   setNewEmployee: React.Dispatch<React.SetStateAction<newEmployeeInt>>,
-  setErrorForm: React.Dispatch<React.SetStateAction<string>>,
-  errorForm: string
+  dispatch: Dispatch<AnyAction>
 ) => {
   if (dataForm.current !== null) {
     const firstNameInput = dataForm.current[0] as HTMLInputElement;
@@ -49,21 +52,6 @@ const formCheck = async (
 
       setNewEmployee(newEmployee);
 
-      const dataNoError: dataErrorInt = {
-        firstName: false,
-        lastName: false,
-        birthday: false,
-        startDay: false,
-        departement: false,
-        street: false,
-        city: false,
-        state: false,
-        zipCode: false,
-      };
-
-      formError(dataNoError);
-      setErrorForm("");
-      errorMessage(errorForm);
       return true;
     } else {
       const dataError: dataErrorInt = {
@@ -81,10 +69,11 @@ const formCheck = async (
         state: state === "" ? true : false,
         zipCode: zipCodeInput.value === "" ? true : false,
       };
-      setErrorForm("error");
 
-      formError(dataError);
-      errorMessage(errorForm);
+      dispatch(setErrorForm(true));
+      dispatch(updateDataNoError(dataError));
+      dispatch(setErrorMessage(true));
+
       return false;
     }
   }

@@ -1,14 +1,24 @@
 import { DropdownMenu } from "@cecigiu2b/dropdown-menu-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { departements } from "../data/departments";
 import { states } from "../data/states";
 import DatePicker from "react-datepicker";
 import Modal from "react-modal";
 import formCheck from "../utils/formCheck";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { reset } from "../feature/errorFormSlice";
+import formError from "../utils/formError";
+import errorMessage from "../utils/errorMessage";
 
 const CreateEmployee = () => {
   Modal.setAppElement("#root");
-  const [errorForm, setErrorForm] = useState("");
+  const dispatch = useAppDispatch();
+
+  const dataNoError = useAppSelector((state) => state.errorForm.dataNoError);
+
+  const errorMessageData = useAppSelector(
+    (state) => state.errorForm.errorMessage
+  );
 
   const [departementValue, setDepartementValue] = useState(null);
   const [stateValue, setStateValue] = useState(null);
@@ -20,6 +30,11 @@ const CreateEmployee = () => {
   const [newEmployee, setNewEmployee] = useState({});
 
   const form = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    formError(dataNoError);
+    errorMessage(errorMessageData);
+  }, [dataNoError, errorMessageData]);
 
   const resetForm = () => {
     const formDOM = document.getElementById("form");
@@ -41,11 +56,12 @@ const CreateEmployee = () => {
       departementValue,
       stateValue,
       setNewEmployee,
-      setErrorForm,
-      errorForm
+      dispatch
     );
 
-    if (check && errorForm !== "error") {
+    if (check) {
+      dispatch(reset());
+
       setModalIsOpen(true);
       console.log(check);
       // Ajout dans le tableau
@@ -55,6 +71,7 @@ const CreateEmployee = () => {
 
   const handleCloseModal = () => {
     resetForm();
+    dispatch(reset());
     setModalIsOpen(false);
   };
 

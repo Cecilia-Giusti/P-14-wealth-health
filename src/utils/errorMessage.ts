@@ -1,8 +1,8 @@
-const errorMessage = (error: string) => {
+const errorMessage = (error: boolean) => {
   const errorMessage = document.getElementById("errorMessage");
 
-  error !== "error"
-    ? errorMessage?.classList.add("hidden")
-    : errorMessage?.classList.remove("hidden");
+  error
+    ? errorMessage?.classList.remove("hidden")
+    : errorMessage?.classList.add("hidden");
 };
 export default errorMessage;
