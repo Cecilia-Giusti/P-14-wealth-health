@@ -121,6 +121,18 @@ input[type="submit"] {
   }
 }
 
+@mixin titleTable {
+  font-family: $fontTitle;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.7rem;
+  line-height: 24px;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  color: #000;
+  font-style: italic;
+}
+
 @mixin titlePage {
   font-family: $fontTitle;
   font-style: normal;

@@ -1,0 +1,51 @@
+.employees {
+  justify-content: center;
+  width: 100%;
+
+  .employees__table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    th,
+    td {
+      padding: 10px 15px;
+    }
+    thead {
+      border: 1px solid $color-row-form;
+
+      tr {
+        @include titleTable;
+        text-align: center;
+        background-color: $color-header-form;
+        color: black;
+
+        th {
+          i {
+            margin-left: 5px;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    tbody {
+      border: 1px solid $color-row-form;
+
+      tr {
+        @include titleForm;
+        font-size: 0.8em;
+        &:nth-child(even) {
+          background-color: $color-row-form;
+        }
+
+        &:hover {
+          background-color: $color-row-form-hover;
+          font-weight: 600;
+          color: black;
+        }
+      }
+    }
+  }
+}
