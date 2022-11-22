@@ -1,0 +1,55 @@
+#buttonNav {
+  @media screen and (max-width: 920px) {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+  }
+
+  @media screen and (max-width: 600px) {
+    left: 5%;
+    top: 6%;
+  }
+
+  @media screen and (max-width: 500px) {
+    left: 6%;
+  }
+
+  @media screen and (max-width: 500px) {
+    top: 1%;
+    left: 0;
+  }
+
+  .button__navbar {
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+
+    i {
+      color: $color-primary;
+      font-size: 30px;
+    }
+  }
+}
+
+#buttonNavClose {
+  visibility: hidden;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  i {
+    color: $color-primary;
+    font-size: 35px;
+  }
+
+  @media screen and (max-width: 920px) {
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    top: 1%;
+  }
+}

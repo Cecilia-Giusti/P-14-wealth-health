@@ -1,0 +1,14 @@
+// Import montserra font
+@font-face {
+  font-family: "MontSerra";
+  src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf) format(truetype);
+}
+
+// Import Lora font
+@font-face {
+  font-family: "ABeeZee";
+  src: url(./assets/fonts/ABeeZee-Regular.ttf) format(truetype);
+}
+
+$fontTitle: "MontSerra", sans-serif;
+$fontSubtitle: "ABeeZee", sans-serif;
