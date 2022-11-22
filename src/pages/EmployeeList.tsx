@@ -5,10 +5,37 @@ import {
   useReactTable,
   SortingState,
   getSortedRowModel,
+  FilterFn,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
-import React from "react";
+import React, { useState } from "react";
+import DebouncedInput from "../components/DebouncedInput";
+import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
+
 // import { useAppSelector } from "../app/hooks";
 import { newEmployeeInt } from "../types/models";
+
+declare module "@tanstack/table-core" {
+  interface FilterFns {
+    fuzzy: FilterFn<unknown>;
+  }
+  interface FilterMeta {
+    itemRank: RankingInfo;
+  }
+}
+
+const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
+  // Rank the item
+  const itemRank = rankItem(row.getValue(columnId), value);
+
+  // Store the itemRank info
+  addMeta({
+    itemRank,
+  });
+
+  // Return if the item should be filtered in/out
+  return itemRank.passed;
+};
 
 const EmployeeList = () => {
   // const dataUsers = useAppSelector((state) => state.users.users);
@@ -89,18 +116,27 @@ const EmployeeList = () => {
   ];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = React.useState(() => [...dataMocked]);
-  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [data, setData] = useState(() => [...dataMocked]);
+
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [globalFilter, setGlobalFilter] = useState("");
 
   const table = useReactTable({
     data,
     columns,
+    filterFns: {
+      fuzzy: fuzzyFilter,
+    },
     state: {
       sorting,
+      globalFilter,
     },
+    onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: fuzzyFilter,
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     debugTable: true,
   });
 
@@ -109,6 +145,15 @@ const EmployeeList = () => {
   return (
     <main className="main">
       <h1>List employees</h1>
+      <div className="searchBar__content">
+        <DebouncedInput
+          value={globalFilter ?? ""}
+          onChange={(value) => setGlobalFilter(String(value))}
+          className="p-2 font-lg shadow border border-block searchBar"
+          placeholder="Search"
+        />
+        <i className=" fa-solid fa-magnifying-glass searchBar__icon"></i>
+      </div>
       <div ref={tableContainerRef} className="employees">
         <table className="employees__table">
           <thead>
