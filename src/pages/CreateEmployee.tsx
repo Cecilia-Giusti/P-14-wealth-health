@@ -69,7 +69,7 @@ const CreateEmployee = () => {
 
   return (
     <main
-      className="main close"
+      className="main createEmployee close"
       onClick={() => {
         handleOpenNav(dispatch, true);
       }}
