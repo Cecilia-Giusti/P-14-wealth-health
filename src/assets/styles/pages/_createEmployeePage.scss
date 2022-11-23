@@ -1,3 +1,6 @@
+.createEmployee {
+  gap: 90px;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -16,6 +19,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    gap: 60px;
     @media screen and (max-width: 1000px) {
       justify-content: flex-start;
       gap: 60px;

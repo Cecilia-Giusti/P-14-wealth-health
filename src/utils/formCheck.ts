@@ -24,7 +24,7 @@ const formCheck = async (
     const zipCodeInput = dataForm.current[8] as HTMLInputElement;
 
     const departement = departmentValue !== null ? departmentValue : null;
-    const state = stateValue !== null ? departmentValue : null;
+    const state = stateValue !== null ? stateValue : null;
 
     if (
       (firstNameInput.value &&
