@@ -1,7 +1,31 @@
-.searchBar__content {
+.employeeList {
+  position: relative;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: flex-end;
+  margin-right: 55px;
   position: relative;
   top: 30px;
-  right: -350px;
+
+  &__show {
+    display: flex;
+    gap: 10px;
+    select {
+      border: none;
+      cursor: pointer;
+      border-bottom: 1px solid $color-border-input;
+      padding: 0px 5px;
+      &:focus-visible {
+        box-shadow: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.57);
+      }
+    }
+  }
   .searchBar {
     background: $color-row-form;
     border: 1px solid $color-row-form;
@@ -31,10 +55,13 @@
 .employees {
   justify-content: center;
   width: 100%;
+  height: 527px;
 
   .employees__table {
     margin: 0 auto;
     border-collapse: collapse;
+    width: 100%;
+
     th,
     td {
       padding: 10px 15px;
@@ -76,6 +103,33 @@
           color: black;
         }
       }
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+  }
+
+  &__pageNumber {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 5px;
     }
   }
 }

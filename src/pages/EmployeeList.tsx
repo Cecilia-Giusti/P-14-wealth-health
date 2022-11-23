@@ -7,6 +7,7 @@ import {
   getSortedRowModel,
   FilterFn,
   getFilteredRowModel,
+  getPaginationRowModel,
 } from "@tanstack/react-table";
 import React, { useState } from "react";
 import DebouncedInput from "../components/DebouncedInput";
@@ -41,6 +42,380 @@ const EmployeeList = () => {
   // const dataUsers = useAppSelector((state) => state.users.users);
 
   const dataMocked = [
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
+    {
+      firstName: "Lola",
+      lastName: "Dupont",
+      birthday: "10/02/2000",
+      startDay: "11/08/2020",
+      departement: "Marketing",
+      street: "3 rue des cigognes",
+      city: "New York City",
+      state: "New York",
+      zipCode: "20200",
+    },
+    {
+      firstName: "Eric",
+      lastName: "Jourdin",
+      birthday: "03/07/1989",
+      startDay: "05/03/2022",
+      departement: "Sales",
+      street: "5 allée des cigognes",
+      city: "Los Angeles",
+      state: "California",
+      zipCode: "30400",
+    },
     {
       firstName: "Lola",
       lastName: "Dupont",
@@ -137,15 +512,38 @@ const EmployeeList = () => {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
     debugTable: true,
   });
 
   const tableContainerRef = React.useRef<HTMLDivElement>(null);
 
+  const [scrollBar, setScrollBar] = useState(false);
+
   return (
-    <main className="main">
+    <main className="main employeeList">
       <h1>List employees</h1>
-      <div className="searchBar__content">
+      <div className="filter">
+        <div className="filter__show">
+          <label htmlFor="number_show">Show</label>
+          <select
+            className="number_show"
+            name="number_show"
+            value={table.getState().pagination.pageSize}
+            onChange={(e) => {
+              table.setPageSize(Number(e.target.value));
+              Number(e.target.value) > 10
+                ? setScrollBar(true)
+                : setScrollBar(false);
+            }}
+          >
+            {[10, 20, 30, 40, 50].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
+        </div>
         <DebouncedInput
           value={globalFilter ?? ""}
           onChange={(value) => setGlobalFilter(String(value))}
@@ -154,7 +552,10 @@ const EmployeeList = () => {
         />
         <i className=" fa-solid fa-magnifying-glass searchBar__icon"></i>
       </div>
-      <div ref={tableContainerRef} className="employees">
+      <div
+        ref={tableContainerRef}
+        className={scrollBar ? "employees scrollBar" : "employees"}
+      >
         <table className="employees__table">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -213,7 +614,45 @@ const EmployeeList = () => {
             ))}
           </tfoot>
         </table>
-        <div className="h-4" />
+        <div className="pagination">
+          <div className="pagination__buttons">
+            <button
+              className="pagination__button"
+              onClick={() => table.setPageIndex(0)}
+              disabled={!table.getCanPreviousPage()}
+            >
+              {"<<"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              {"<"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              {">"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+              disabled={!table.getCanNextPage()}
+            >
+              {">>"}
+            </button>
+          </div>
+          <span className="flex items-center gap-1 pagination__pageNumber">
+            <p>Page : </p>
+            <strong>
+              {table.getState().pagination.pageIndex + 1} of{" "}
+              {table.getPageCount()}
+            </strong>
+          </span>
+        </div>
       </div>
     </main>
   );

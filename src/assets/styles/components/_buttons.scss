@@ -9,11 +9,26 @@ input[type="button"] {
   cursor: pointer;
 
   &:hover,
-  &:active {
+  &:focus-visible {
     background: $color-secondary;
   }
 }
 
 input[type="button"] {
   border: none;
+}
+
+.pagination__button {
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background: $color-primary;
+  border-radius: 40px;
+  color: white;
+  @include titleButton;
+  &:hover,
+  &:focus-visible {
+    background: $color-secondary;
+  }
 }
