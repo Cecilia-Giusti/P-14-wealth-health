@@ -1,5 +1,9 @@
 .createEmployee {
   gap: 90px;
+
+  @media screen and (max-width: 600px) {
+    gap: 60px;
+  }
 }
 main {
   display: flex;

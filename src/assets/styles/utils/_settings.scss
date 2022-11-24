@@ -102,6 +102,9 @@ input[type="submit"] {
 
 .notShow {
   display: none;
+  @media screen and (max-width: 920px) {
+    display: none;
+  }
 }
 
 .scrollBar {

@@ -19,6 +19,7 @@ const CreateEmployee = () => {
   const errorMessageData = useAppSelector(
     (state) => state.errorForm.errorMessage
   );
+  const openHeader = useAppSelector((state) => state.reponsive.openHeader);
 
   const [departementValue, setDepartementValue] = useState(null);
   const [stateValue, setStateValue] = useState(null);
@@ -67,7 +68,9 @@ const CreateEmployee = () => {
 
   return (
     <main
-      className="main createEmployee close"
+      className={
+        openHeader ? "main createEmployee" : "main createEmployee close"
+      }
       onClick={() => {
         handleOpenNav(dispatch, true);
       }}
