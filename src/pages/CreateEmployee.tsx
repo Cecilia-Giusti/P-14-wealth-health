@@ -49,12 +49,10 @@ const CreateEmployee = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    //Vérification du formulaire
     const check = await formCheck(form, departementValue, stateValue, dispatch);
 
     if (check) {
       dispatch(reset());
-
       setModalIsOpen(true);
       console.log(check);
       // Ajout dans le tableau
