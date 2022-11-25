@@ -1,5 +1,6 @@
 .employeeList {
   position: relative;
+  gap: 20px;
 }
 
 .filter {
@@ -9,7 +10,7 @@
   align-self: flex-end;
   margin-right: 55px;
   position: relative;
-  top: 30px;
+  top: 10px;
 
   @media screen and (max-width: 1070px) {
     margin-right: 5px;
@@ -145,6 +146,10 @@
       @media screen and (max-width: 1160px) {
         padding: 5px 4px;
       }
+
+      @media screen and (max-height: 834px) {
+        padding: 2px 4px;
+      }
     }
     thead {
       border: 1px solid $color-header-form;
@@ -189,16 +194,20 @@
 }
 
 .pagination {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding-bottom: 20px;
+  margin-top: 5%;
+
+  @media screen and (max-width: 1042px) {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10%);
+  }
 
   &__buttons {
     display: flex;

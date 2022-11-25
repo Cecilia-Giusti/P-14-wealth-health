@@ -1,9 +1,5 @@
 .createEmployee {
-  gap: 90px;
-
-  @media screen and (max-width: 600px) {
-    gap: 60px;
-  }
+  gap: 60px;
 }
 main {
   display: flex;
@@ -38,6 +34,7 @@ main {
       @media screen and (max-width: 1000px) {
         flex-direction: column;
         align-items: center;
+        gap: 21px;
       }
 
       &::after {

@@ -8,8 +8,9 @@
 
 body {
   background: url("./assets/images/background-image.png") no-repeat center/cover;
-  min-height: 100vh;
-  padding: 20px;
+  height: 100vh;
+  padding: 15px;
+  width: 100%;
   display: flex;
   justify-content: center;
   @media screen and (max-width: 400px) {
@@ -28,7 +29,7 @@ body {
 }
 
 header {
-  min-height: 90vh;
+  height: 100%;
   width: 20%;
   max-width: 300px;
   @media screen and (max-width: 400px) {
@@ -36,7 +37,7 @@ header {
   }
 }
 .main {
-  min-height: 90vh;
+  height: 100%;
   width: 80%;
   background: #ffffff;
   border-radius: 0px 10px 10px 0px;
