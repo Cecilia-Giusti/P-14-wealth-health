@@ -8,8 +8,9 @@
 
 body {
   background: url("./assets/images/background-image.png") no-repeat center/cover;
-  min-height: 100vh;
-  padding: 20px;
+  height: 100vh;
+  padding: 15px;
+  width: 100%;
   display: flex;
   justify-content: center;
   @media screen and (max-width: 400px) {
@@ -28,7 +29,7 @@ body {
 }
 
 header {
-  min-height: 90vh;
+  height: 100%;
   width: 20%;
   max-width: 300px;
   @media screen and (max-width: 400px) {
@@ -36,7 +37,7 @@ header {
   }
 }
 .main {
-  min-height: 90vh;
+  height: 100%;
   width: 80%;
   background: #ffffff;
   border-radius: 0px 10px 10px 0px;
@@ -102,67 +103,12 @@ input[type="submit"] {
 
 .notShow {
   display: none;
+  @media screen and (max-width: 920px) {
+    display: none;
+  }
 }
 
 .scrollBar {
   overflow-y: scroll;
   scrollbar-width: thin;
-}
-
-//Mixins
-
-@mixin titleNav {
-  font-family: $fontTitle;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 24px;
-  font-variant: small-caps;
-  text-transform: uppercase;
-  color: #000;
-
-  &:hover {
-    color: $color-primary;
-  }
-}
-
-@mixin titleTable {
-  font-family: $fontTitle;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.7rem;
-  line-height: 24px;
-  font-variant: small-caps;
-  text-transform: uppercase;
-  color: #000;
-  font-style: italic;
-}
-
-@mixin titlePage {
-  font-family: $fontTitle;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 39px;
-  font-variant: small-caps;
-  color: $color-primary;
-  text-transform: uppercase;
-}
-
-@mixin titleForm {
-  font-family: $fontSubtitle;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
-  color: $color-tertiary;
-}
-
-@mixin titleButton {
-  font-family: $fontTitle;
-  font-weight: 700;
-  font-size: 0.7rem;
-  line-height: 24px;
-  text-align: center;
-  font-variant: small-caps;
 }

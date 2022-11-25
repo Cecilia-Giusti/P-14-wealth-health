@@ -1,6 +1,5 @@
 #buttonNav {
   @media screen and (max-width: 920px) {
-    display: block;
     position: absolute;
     top: 5%;
     left: 3%;
@@ -30,6 +29,18 @@
       color: $color-primary;
       font-size: 30px;
     }
+  }
+}
+
+.buttonNav {
+  display: none;
+  z-index: 500;
+  @media screen and (max-width: 920px) {
+    display: block;
+  }
+
+  &--notShow {
+    display: none;
   }
 }
 

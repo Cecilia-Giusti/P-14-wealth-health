@@ -12,9 +12,11 @@ import {
 import React, { useState } from "react";
 import DebouncedInput from "../components/DebouncedInput";
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
+import { handleOpenNav } from "../utils/handleOpenNav";
 
 // import { useAppSelector } from "../app/hooks";
 import { newEmployeeInt } from "../types/models";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -495,6 +497,8 @@ const EmployeeList = () => {
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
+  const dispatch = useAppDispatch();
+  const openHeader = useAppSelector((state) => state.reponsive.openHeader);
 
   const table = useReactTable({
     data,
@@ -521,7 +525,12 @@ const EmployeeList = () => {
   const [scrollBar, setScrollBar] = useState(false);
 
   return (
-    <main className="main employeeList">
+    <main
+      className={openHeader ? "main employeeList" : "main employeeList close"}
+      onClick={() => {
+        handleOpenNav(dispatch, true);
+      }}
+    >
       <h1>List employees</h1>
       <div className="filter">
         <div className="filter__show">

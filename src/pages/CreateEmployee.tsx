@@ -19,6 +19,7 @@ const CreateEmployee = () => {
   const errorMessageData = useAppSelector(
     (state) => state.errorForm.errorMessage
   );
+  const openHeader = useAppSelector((state) => state.reponsive.openHeader);
 
   const [departementValue, setDepartementValue] = useState(null);
   const [stateValue, setStateValue] = useState(null);
@@ -49,12 +50,10 @@ const CreateEmployee = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    //Vérification du formulaire
     const check = await formCheck(form, departementValue, stateValue, dispatch);
 
     if (check) {
       dispatch(reset());
-
       setModalIsOpen(true);
       console.log(check);
       // Ajout dans le tableau
@@ -69,7 +68,9 @@ const CreateEmployee = () => {
 
   return (
     <main
-      className="main createEmployee close"
+      className={
+        openHeader ? "main createEmployee" : "main createEmployee close"
+      }
       onClick={() => {
         handleOpenNav(dispatch, true);
       }}
