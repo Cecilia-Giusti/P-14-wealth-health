@@ -19,15 +19,17 @@
     left: 0;
   }
 
-  .button__navbar {
-    background: none;
-    border: none;
-    width: 50px;
-    height: 50px;
+  .button {
+    &__navbar {
+      background: none;
+      border: none;
+      width: 50px;
+      height: 50px;
 
-    i {
-      color: $color-primary;
-      font-size: 30px;
+      i {
+        color: $color-primary;
+        font-size: 30px;
+      }
     }
   }
 }
@@ -63,4 +65,11 @@
     position: relative;
     top: 1%;
   }
+}
+
+.button__createData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
