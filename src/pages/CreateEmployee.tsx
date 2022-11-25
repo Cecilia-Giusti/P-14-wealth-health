@@ -1,7 +1,7 @@
 import { DropdownMenu } from "@cecigiu2b/dropdown-menu-react";
 import { useEffect, useRef, useState } from "react";
-import { departements } from "../data/departments";
-import { states } from "../data/states";
+import { departements } from "../assets/data/departments";
+import { states } from "../assets/data/states";
 import DatePicker from "react-datepicker";
 import Modal from "react-modal";
 import formCheck from "../utils/formCheck";

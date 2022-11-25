@@ -29,6 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "json-server --w src/assets/data/database.json --port 3004",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed"
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/react-datepicker": "^4.8.0",
     "@types/react-modal": "^3.13.1",
     "source-map-loader": "^4.0.1"
