@@ -6,7 +6,7 @@ import {
   setErrorMessage,
   updateDataNoError,
 } from "../feature/errorFormSlice";
-import { addUser } from "../feature/usersSlice";
+import { postUser } from "../service/user";
 
 const formCheck = async (
   dataForm: RefObject<HTMLFormElement>,
@@ -50,7 +50,11 @@ const formCheck = async (
         zipCode: zipCodeInput.value,
       };
 
-      dispatch(addUser(newEmployee));
+      try {
+        postUser(newEmployee, dispatch);
+      } catch (error) {
+        console.error(error);
+      }
 
       return true;
     } else {

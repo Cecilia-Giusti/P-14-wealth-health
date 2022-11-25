@@ -56,7 +56,6 @@ const CreateEmployee = () => {
       dispatch(reset());
       setModalIsOpen(true);
       console.log(check);
-      // Ajout dans le tableau
     }
   };
 

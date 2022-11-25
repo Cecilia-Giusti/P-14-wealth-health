@@ -41,8 +41,6 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
 };
 
 const EmployeeList = () => {
-  // const dataUsers = useAppSelector((state) => state.users.users);
-
   const dataUsers = useAppSelector((state) => state.users.users);
 
   const columnHelper = createColumnHelper<newEmployeeInt>();

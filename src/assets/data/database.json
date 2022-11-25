@@ -441,6 +441,30 @@
       "state": "North Carolina",
       "zipCode": "48612-7757",
       "id": 34
+    },
+    {
+      "firstName": "Cecilia",
+      "lastName": "Giusti",
+      "birthday": "05/26/1991",
+      "startDay": "11/08/2022",
+      "departement": "Marketing",
+      "street": "43 Chemin des Plateaux",
+      "city": "Floirac",
+      "state": "Alaska",
+      "zipCode": "33270",
+      "id": 35
+    },
+    {
+      "firstName": "Alexandre",
+      "lastName": "Massicot",
+      "birthday": "10/30/2022",
+      "startDay": "11/28/2022",
+      "departement": "Human Resources",
+      "street": "5 rue de saint venant",
+      "city": "tours",
+      "state": "Connecticut",
+      "zipCode": "37100",
+      "id": 36
     }
   ]
 }
