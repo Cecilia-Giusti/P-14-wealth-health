@@ -2,6 +2,7 @@
   "name": "wealth-health",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cecilia-giusti.github.io/P-14-wealth-health",
   "dependencies": {
     "@cecigiu2b/dropdown-menu-react": "^1.7.10",
     "@reduxjs/toolkit": "^1.9.0",
@@ -15,6 +16,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "axios": "^1.2.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
@@ -29,6 +31,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "server": "json-server --w src/assets/data/database.json --port 3004",
     "test": "react-scripts test",
