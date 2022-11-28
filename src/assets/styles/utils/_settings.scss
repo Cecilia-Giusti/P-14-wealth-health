@@ -112,3 +112,7 @@ input[type="submit"] {
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+
+.notEven {
+  pointer-events: none;
+}

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { handleOpenNav } from "../utils/handleOpenNav";
+import ButtonDataCreate from "./ButtonDataCreate";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -26,6 +27,7 @@ const Header = () => {
             <li>current employees</li>
           </NavLink>
         </ul>
+        <ButtonDataCreate />
       </nav>
     </header>
   );
