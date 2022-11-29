@@ -109,12 +109,12 @@ input.button.employeeList__header--button {
     &__icon {
       display: none;
       background: none;
-      color: $color-primary;
 
       @media screen and (max-width: 600px) {
         display: block;
         position: absolute;
-
+        color: $color-primary;
+        width: 20px;
         right: 7%;
         transform: translateX(-7%);
         transform: scaleX(-1);

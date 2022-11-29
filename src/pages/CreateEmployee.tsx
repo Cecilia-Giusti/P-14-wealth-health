@@ -83,11 +83,11 @@ const CreateEmployee = () => {
           <div className="form__content--left">
             <div className="firstName__content">
               <label htmlFor="firstName">First Name</label>
-              <input type="text" name="firstName" autoFocus />
+              <input type="text" name="firstName" id="firstName" autoFocus />
             </div>
             <div className="lastName__content">
               <label htmlFor="lastName">Last Name</label>
-              <input type="text" name="lastName" />
+              <input type="text" name="lastName" id="lastName" />
             </div>
 
             <div className="birthday__content">
@@ -123,11 +123,11 @@ const CreateEmployee = () => {
           <div className="form__content--right">
             <div className="street__content">
               <label htmlFor="street">Street</label>
-              <input type="text" name="street" />
+              <input type="text" name="street" id="street" />
             </div>
             <div className="city__content">
               <label htmlFor="city">City</label>
-              <input type="text" name="city" />
+              <input type="text" name="city" id="city" />
             </div>
             <div className="states__content">
               <label htmlFor="states">State</label>
@@ -141,7 +141,7 @@ const CreateEmployee = () => {
             </div>
             <div className="zipCode__content">
               <label htmlFor="zipCode">Zip Code</label>
-              <input type="text" name="zipCode" />
+              <input type="text" name="zipCode" id="zipCode" />
             </div>
           </div>
         </div>
