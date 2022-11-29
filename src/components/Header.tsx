@@ -15,10 +15,7 @@ const Header = () => {
         <i className="fa-solid fa-xmark"></i>
       </button>
       <div className="banner">
-        <img
-          src="/P-14-wealth-health/assets/images/logo1.png"
-          alt="Logo wealth health"
-        />
+        <img src="./assets/images/logo1.png" alt="Logo wealth health" />
         <p className="title">HRNET</p>
       </div>
       <nav>

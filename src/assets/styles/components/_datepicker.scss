@@ -40,18 +40,21 @@
   left: 50px;
 }
 
+.react-datepicker {
+  position: relative;
+  .react-datepicker__triangle {
+    @extend %triangle-arrow-up;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
 .react-datepicker-popper {
   z-index: 1;
 
   &[data-placement^="bottom"] {
     padding-top: $datepicker__triangle-size + 2px;
-
-    .react-datepicker__triangle {
-      @extend %triangle-arrow-up;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
   }
 
   &[data-placement="bottom-end"],
@@ -156,10 +159,42 @@
 
   &--previous {
     left: 2px;
+
+    &::before {
+      content: "<";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+
+      width: 0;
+      height: 0;
+
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+
+      border-right: 9px solid $color-primary;
+      z-index: 200;
+    }
   }
 
   &--next {
     right: 2px;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 0;
+      height: 0;
+
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+
+      border-left: 9px solid $color-primary;
+
+      z-index: 200;
+    }
 
     &--with-time:not(&--with-today-button) {
       right: 85px;
@@ -197,6 +232,9 @@
 
   &::before {
     @extend %navigation-chevron;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &--next {
@@ -275,11 +313,14 @@
 
       input[type="time"]::-webkit-inner-spin-button,
       input[type="time"]::-webkit-outer-spin-button {
+        appearance: none;
         -webkit-appearance: none;
         margin: 0;
       }
 
       input[type="time"] {
+        -webkit-appearance: textfield;
+                appearance: textfield;
         -moz-appearance: textfield;
       }
     }
@@ -691,4 +732,8 @@
   padding-right: 0.2rem;
   padding-left: 0.2rem;
   height: auto;
+}
+
+.react-datepicker__triangle {
+  display: none;
 }
