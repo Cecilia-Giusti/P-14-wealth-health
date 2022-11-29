@@ -8,6 +8,7 @@ import {
   FilterFn,
   getFilteredRowModel,
   getPaginationRowModel,
+  ColumnDef,
 } from "@tanstack/react-table";
 import React, { useState } from "react";
 import DebouncedInput from "../components/DebouncedInput";
@@ -17,6 +18,7 @@ import { handleOpenNav } from "../utils/handleOpenNav";
 // import { useAppSelector } from "../app/hooks";
 import { newEmployeeInt } from "../types/models";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { SpinnerCircular } from "spinners-react";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -41,11 +43,11 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
 };
 
 const EmployeeList = () => {
-  const dataUsers = useAppSelector((state) => state.users.users);
+  const data = useAppSelector((state) => state.users.users);
 
   const columnHelper = createColumnHelper<newEmployeeInt>();
 
-  const columns = [
+  const columns: ColumnDef<newEmployeeInt, any>[] = [
     columnHelper.accessor((row) => row.firstName, {
       id: "firstName",
       cell: (info) => info.getValue(),
@@ -93,9 +95,6 @@ const EmployeeList = () => {
     }),
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState(() => [...dataUsers]);
-
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
   const dispatch = useAppDispatch();
@@ -125,105 +124,128 @@ const EmployeeList = () => {
 
   const [scrollBar, setScrollBar] = useState(false);
 
-  return (
-    <main
-      className={openHeader ? "main employeeList" : "main employeeList close"}
-      onClick={() => {
-        handleOpenNav(dispatch, true);
-      }}
-    >
-      <h1>List employees</h1>
-      <div className="filter">
-        <div className="filter__show">
-          <label htmlFor="number_show">Show</label>
-          <select
-            className="number_show"
-            name="number_show"
-            value={table.getState().pagination.pageSize}
-            onChange={(e) => {
-              table.setPageSize(Number(e.target.value));
-              Number(e.target.value) > 10
-                ? setScrollBar(true)
-                : setScrollBar(false);
-            }}
-          >
-            {[10, 20, 30, 40, 50].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-        </div>
-        <DebouncedInput
-          value={globalFilter ?? ""}
-          onChange={(value) => setGlobalFilter(String(value))}
-          className="p-2 font-lg shadow border border-block searchBar"
-          placeholder="Search"
-        />
-        <i className=" fa-solid fa-magnifying-glass searchBar__icon"></i>
-      </div>
-      <div
-        ref={tableContainerRef}
-        className={scrollBar ? "employees scrollBar" : "employees"}
+  if (!data) {
+    return (
+      <main
+        className={openHeader ? "main employeeList" : "main employeeList close"}
+        onClick={() => {
+          handleOpenNav(dispatch, true);
+        }}
       >
-        <table className="employees__table">
-          <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
-                    {header.isPlaceholder ? null : (
-                      <div
-                        {...{
-                          className: header.column.getCanSort()
-                            ? "cursor-pointer select-none"
-                            : "",
-                          onClick: header.column.getToggleSortingHandler(),
-                        }}
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                        {{
-                          asc: <i className="fa-solid fa-chevron-down"></i>,
-                          desc: <i className="fa-solid fa-chevron-up"></i>,
-                        }[header.column.getIsSorted() as string] ?? null}
-                      </div>
-                    )}
-                  </th>
+        <h1>List employees</h1>
+        <SpinnerCircular
+          enabled={true}
+          color={"#006b61"}
+          secondaryColor={"#fff"}
+        />
+      </main>
+    );
+  } else {
+    return (
+      <main
+        className={openHeader ? "main employeeList" : "main employeeList close"}
+        onClick={() => {
+          handleOpenNav(dispatch, true);
+        }}
+      >
+        <h1>List employees</h1>
+        <div className="employeeList__header">
+          <div className="filter">
+            <div className="filter__show">
+              <label htmlFor="number_show">Show</label>
+              <select
+                className="number_show"
+                name="number_show"
+                value={table.getState().pagination.pageSize}
+                onChange={(e) => {
+                  table.setPageSize(Number(e.target.value));
+                  Number(e.target.value) > 10
+                    ? setScrollBar(true)
+                    : setScrollBar(false);
+                }}
+              >
+                {[10, 20, 30, 40, 50].map((pageSize) => (
+                  <option key={pageSize} value={pageSize}>
+                    {pageSize}
+                  </option>
                 ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-          <tfoot>
-            {table.getFooterGroups().map((footerGroup) => (
-              <tr key={footerGroup.id}>
-                {footerGroup.headers.map((header) => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.footer,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </tfoot>
-        </table>
+              </select>
+            </div>
+            <DebouncedInput
+              value={globalFilter ?? ""}
+              onChange={(value) => setGlobalFilter(String(value))}
+              className="p-2 font-lg shadow border border-block searchBar"
+              placeholder="Search"
+            />
+            <i className=" fa-solid fa-magnifying-glass searchBar__icon"></i>
+          </div>
+        </div>
+        <div
+          ref={tableContainerRef}
+          className={scrollBar ? "employees scrollBar" : "employees"}
+        >
+          <table className="employees__table">
+            <thead>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <th key={header.id}>
+                      {header.isPlaceholder ? null : (
+                        <div
+                          {...{
+                            className: header.column.getCanSort()
+                              ? "cursor-pointer select-none"
+                              : "",
+                            onClick: header.column.getToggleSortingHandler(),
+                          }}
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          {{
+                            asc: <i className="fa-solid fa-chevron-down"></i>,
+                            desc: <i className="fa-solid fa-chevron-up"></i>,
+                          }[header.column.getIsSorted() as string] ?? null}
+                        </div>
+                      )}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody>
+              {table.getRowModel().rows.map((row) => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <td key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              {table.getFooterGroups().map((footerGroup) => (
+                <tr key={footerGroup.id}>
+                  {footerGroup.headers.map((header) => (
+                    <th key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.footer,
+                            header.getContext()
+                          )}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </tfoot>
+          </table>
+        </div>
         <div className="pagination">
           <div className="pagination__buttons">
             <button
@@ -263,9 +285,9 @@ const EmployeeList = () => {
             </strong>
           </span>
         </div>
-      </div>
-    </main>
-  );
+      </main>
+    );
+  }
 };
 
 export default EmployeeList;

@@ -1,6 +1,20 @@
 .employeeList {
   position: relative;
   gap: 20px;
+  justify-content: flex-start;
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+input.button.employeeList__header--button {
+  height: inherit;
+  width: inherit;
+  padding: 8px 10px;
 }
 
 .filter {
@@ -9,8 +23,6 @@
   gap: 20px;
   align-self: flex-end;
   margin-right: 55px;
-  position: relative;
-  top: 10px;
 
   @media screen and (max-width: 1070px) {
     margin-right: 5px;
@@ -39,7 +51,7 @@
   .searchBar {
     background: $color-row-form;
     border: 1px solid $color-row-form;
-
+    position: relative;
     border-radius: 40px;
     padding: 5px 10px;
 
@@ -95,16 +107,16 @@
     }
 
     &__icon {
-      position: absolute;
+      display: none;
       background: none;
-      top: 5px;
-      right: 3%;
-      transform: translateX(-3%);
-      transform: scaleX(-1);
       color: $color-primary;
+
       @media screen and (max-width: 600px) {
-        right: 5%;
-        transform: translateX(-5%);
+        display: block;
+        position: absolute;
+
+        right: 7%;
+        transform: translateX(-7%);
         transform: scaleX(-1);
       }
 
@@ -120,12 +132,20 @@
 
 .employees {
   justify-content: center;
+  max-height: 700px;
   width: 100%;
-  height: 527px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 80px;
 
   @media screen and (max-width: 1070px) {
     overflow-y: scroll;
     overflow-x: scroll;
+  }
+
+  @media screen and (max-height: 845px) {
+    max-height: 600px;
   }
 
   .employees__table {
@@ -174,6 +194,10 @@
 
     tbody {
       border: 1px solid $color-row-form;
+      td,
+      th {
+        white-space: nowrap;
+      }
 
       tr {
         @include titleForm;
@@ -198,16 +222,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
   gap: 10px;
   padding-bottom: 20px;
   margin-top: 5%;
 
-  @media screen and (max-width: 1042px) {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10%);
-  }
+  transform: translateX(-50%);
 
   &__buttons {
     display: flex;

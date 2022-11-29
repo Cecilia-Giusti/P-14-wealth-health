@@ -1,10 +1,18 @@
 header {
   background: rgba(255, 255, 255, 0.57);
+
   border-radius: 10px 0px 0px 10px;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 920px) {
     display: none;
+  }
+
+  @media screen and (max-width: 400px) {
+    border-radius: 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 200;
   }
 
   .banner {
@@ -36,6 +44,7 @@ header {
 
       @media screen and (max-width: 400px) {
         font-size: 13px;
+        text-align: start;
       }
     }
   }
