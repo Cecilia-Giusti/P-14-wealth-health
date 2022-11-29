@@ -95,6 +95,7 @@ const CreateEmployee = () => {
               <DatePicker
                 className="dateInput"
                 selected={birthday}
+                id="birthday"
                 onChange={(date: Date) => setBirthday(date)}
               />
               <i className="fa-regular fa-calendar dateInput__icon"></i>
@@ -104,6 +105,7 @@ const CreateEmployee = () => {
               <label htmlFor="startDay">Start day</label>
               <DatePicker
                 className="dateInput"
+                id="startDay"
                 selected={startDay}
                 onChange={(date: Date) => setStartDay(date)}
               />

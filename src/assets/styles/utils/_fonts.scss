@@ -2,12 +2,14 @@
 @font-face {
   font-family: "MontSerra";
   src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf) format(truetype);
+  font-display: swap;
 }
 
 // Import Lora font
 @font-face {
   font-family: "ABeeZee";
   src: url(./assets/fonts/ABeeZee-Regular.ttf) format(truetype);
+  font-display: swap;
 }
 
 $fontTitle: "MontSerra", sans-serif;

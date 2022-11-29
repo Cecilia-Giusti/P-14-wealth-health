@@ -2,7 +2,6 @@
 
 @mixin titleNav {
   font-family: $fontTitle;
-  font-display: auto;
   font-style: normal;
   font-weight: 600;
   font-size: 0.8rem;
@@ -18,7 +17,7 @@
 
 @mixin titleTable {
   font-family: $fontTitle;
-  font-display: auto;
+
   font-style: normal;
   font-weight: 600;
   font-size: 0.7rem;
@@ -31,7 +30,7 @@
 
 @mixin titlePage {
   font-family: $fontTitle;
-  font-display: auto;
+
   font-style: normal;
   font-weight: 800;
   font-size: 1.5rem;
@@ -43,7 +42,7 @@
 
 @mixin titleForm {
   font-family: $fontSubtitle;
-  font-display: auto;
+
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -53,7 +52,7 @@
 
 @mixin titleButton {
   font-family: $fontTitle;
-  font-display: auto;
+
   font-weight: 700;
   font-size: 0.7rem;
   line-height: 24px;
