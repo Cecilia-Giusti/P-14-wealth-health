@@ -15,15 +15,18 @@ const Header = () => {
         <i className="fa-solid fa-xmark"></i>
       </button>
       <div className="banner">
-        <img src="./assets/images/logo1.png" alt="Logo wealth health" />
+        <img
+          src="./P-14-wealth-health/assets/images/logo1.png"
+          alt="Logo wealth health"
+        />
         <p className="title">HRNET</p>
       </div>
       <nav>
         <ul>
-          <NavLink to={"/"}>
+          <NavLink to={"/P-14-wealth-health/"}>
             <li>create employee</li>
           </NavLink>
-          <NavLink to={"/current-employees"}>
+          <NavLink to={"/P-14-wealth-health/current-employees"}>
             <li>current employees</li>
           </NavLink>
         </ul>

@@ -20,9 +20,12 @@ const App = () => {
       <Header />
       <ButtonNav />
       <Routes>
-        <Route path="/" element={<CreateEmployee />} />
-        <Route path="/current-employees" element={<EmployeeList />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/P-14-wealth-health/" element={<CreateEmployee />} />
+        <Route
+          path="/P-14-wealth-health/current-employees"
+          element={<EmployeeList />}
+        />
+        <Route path="/P-14-wealth-health/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
