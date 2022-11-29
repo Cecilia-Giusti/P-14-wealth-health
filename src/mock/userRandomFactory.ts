@@ -24,7 +24,7 @@ export const createRandomUser = (): UserMock => {
   const zipCode = faker.address.zipCodeByState(state);
 
   const changeDate = (date: Date) => {
-    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   };
 
   return {
@@ -42,7 +42,7 @@ export const createRandomUser = (): UserMock => {
 };
 
 export const usersMock = () => {
-  Array.from({ length: 30 }).forEach(() => {
+  Array.from({ length: 50 }).forEach(() => {
     USERS.push(createRandomUser());
   });
 
