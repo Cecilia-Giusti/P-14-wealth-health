@@ -50,7 +50,7 @@ input.button.employeeList__header--button {
   .searchBar {
     background: $color-row-form;
     border: 1px solid $color-row-form;
-
+    position: relative;
     border-radius: 40px;
     padding: 5px 10px;
 
@@ -106,16 +106,16 @@ input.button.employeeList__header--button {
     }
 
     &__icon {
-      position: absolute;
+      display: none;
       background: none;
-      top: 5px;
-      right: 3%;
-      transform: translateX(-3%);
-      transform: scaleX(-1);
       color: $color-primary;
+
       @media screen and (max-width: 600px) {
-        right: 5%;
-        transform: translateX(-5%);
+        display: block;
+        position: absolute;
+
+        right: 7%;
+        transform: translateX(-7%);
         transform: scaleX(-1);
       }
 
@@ -132,7 +132,9 @@ input.button.employeeList__header--button {
 .employees {
   justify-content: center;
   width: 100%;
-  height: 527px;
+  height: 600px;
+  white-space: nowrap;
+  overflow: scroll;
 
   @media screen and (max-width: 1070px) {
     overflow-y: scroll;
@@ -185,6 +187,10 @@ input.button.employeeList__header--button {
 
     tbody {
       border: 1px solid $color-row-form;
+      td,
+      th {
+        white-space: nowrap;
+      }
 
       tr {
         @include titleForm;
@@ -212,13 +218,10 @@ input.button.employeeList__header--button {
   gap: 10px;
   padding-bottom: 20px;
   margin-top: 5%;
-
-  @media screen and (max-width: 1042px) {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10%);
-  }
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10%);
 
   &__buttons {
     display: flex;

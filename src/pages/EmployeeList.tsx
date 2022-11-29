@@ -245,45 +245,45 @@ const EmployeeList = () => {
               ))}
             </tfoot>
           </table>
-          <div className="pagination">
-            <div className="pagination__buttons">
-              <button
-                className="pagination__button"
-                onClick={() => table.setPageIndex(0)}
-                disabled={!table.getCanPreviousPage()}
-              >
-                {"<<"}
-              </button>
-              <button
-                className="pagination__button"
-                onClick={() => table.previousPage()}
-                disabled={!table.getCanPreviousPage()}
-              >
-                {"<"}
-              </button>
-              <button
-                className="pagination__button"
-                onClick={() => table.nextPage()}
-                disabled={!table.getCanNextPage()}
-              >
-                {">"}
-              </button>
-              <button
-                className="pagination__button"
-                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-                disabled={!table.getCanNextPage()}
-              >
-                {">>"}
-              </button>
-            </div>
-            <span className="flex items-center gap-1 pagination__pageNumber">
-              <p>Page : </p>
-              <strong>
-                {table.getState().pagination.pageIndex + 1} of{" "}
-                {table.getPageCount()}
-              </strong>
-            </span>
+        </div>
+        <div className="pagination">
+          <div className="pagination__buttons">
+            <button
+              className="pagination__button"
+              onClick={() => table.setPageIndex(0)}
+              disabled={!table.getCanPreviousPage()}
+            >
+              {"<<"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              {"<"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              {">"}
+            </button>
+            <button
+              className="pagination__button"
+              onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+              disabled={!table.getCanNextPage()}
+            >
+              {">>"}
+            </button>
           </div>
+          <span className="flex items-center gap-1 pagination__pageNumber">
+            <p>Page : </p>
+            <strong>
+              {table.getState().pagination.pageIndex + 1} of{" "}
+              {table.getPageCount()}
+            </strong>
+          </span>
         </div>
       </main>
     );
