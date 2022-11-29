@@ -75,7 +75,12 @@ const CreateEmployee = () => {
       }}
     >
       <h1>Create Employee</h1>
-      <span id="errorMessage" className="error-message hidden">
+      <span
+        id="errorMessage"
+        className="error-message hidden"
+        aria-hidden
+        aria-disabled
+      >
         Please complete correctly all fields
       </span>
       <form id="form" ref={form} onSubmit={(e) => handleSubmit(e)}>
@@ -112,7 +117,7 @@ const CreateEmployee = () => {
               <i className="fa-regular fa-calendar dateInput__icon"></i>
             </div>
             <div className="departements__content">
-              <label htmlFor="departments">Department</label>
+              <label htmlFor="departements">Department</label>
               <DropdownMenu
                 name="departements"
                 options={departements}

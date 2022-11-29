@@ -8,6 +8,7 @@ const ButtonNav = () => {
     <div id="buttonNav" className="buttonNav">
       <button
         className="button__navbar"
+        aria-label="Open nav"
         onClick={() => handleOpenNav(dispatch, openHeader)}
       >
         <i className="fa-solid fa-bars"></i>

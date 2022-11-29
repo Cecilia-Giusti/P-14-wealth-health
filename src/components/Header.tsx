@@ -9,6 +9,7 @@ const Header = () => {
     <header>
       <button
         id="buttonNavClose"
+        aria-label="Close"
         onClick={() => handleOpenNav(dispatch, navOpen)}
       >
         <i className="fa-solid fa-xmark"></i>
@@ -19,12 +20,14 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          <NavLink to={"/P-14-wealth-health/"}>
-            <li>create employee</li>
-          </NavLink>
-          <NavLink to={"/P-14-wealth-health/current-employees"}>
-            <li>current employees</li>
-          </NavLink>
+          <li>
+            <NavLink to={"/P-14-wealth-health/"}>create employee</NavLink>
+          </li>{" "}
+          <li>
+            <NavLink to={"/P-14-wealth-health/current-employees"}>
+              current employees
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
