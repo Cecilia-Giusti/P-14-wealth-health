@@ -16,7 +16,7 @@ const Header = () => {
       </button>
       <div className="banner">
         <img
-          src="./P-14-wealth-health/assets/images/logo1.png"
+          src="/P-14-wealth-health/assets/images/logo1.png"
           alt="Logo wealth health"
         />
         <p className="title">HRNET</p>

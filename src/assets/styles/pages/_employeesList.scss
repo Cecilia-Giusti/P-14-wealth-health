@@ -1,6 +1,19 @@
 .employeeList {
   position: relative;
   gap: 20px;
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+input.button.employeeList__header--button {
+  height: inherit;
+  width: inherit;
+  padding: 8px 10px;
 }
 
 .filter {
@@ -9,8 +22,6 @@
   gap: 20px;
   align-self: flex-end;
   margin-right: 55px;
-  position: relative;
-  top: 10px;
 
   @media screen and (max-width: 1070px) {
     margin-right: 5px;
