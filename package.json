@@ -33,10 +33,10 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --ignore src/mock",
     "build": "react-scripts build",
     "server": "json-server --w src/assets/data/database.json --port 3004",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed"
   },
@@ -62,6 +62,7 @@
     "@faker-js/faker": "^7.6.0",
     "@types/react-datepicker": "^4.8.0",
     "@types/react-modal": "^3.13.1",
+    "react-test-renderer": "^18.2.0",
     "source-map-loader": "^4.0.1"
   }
 }
