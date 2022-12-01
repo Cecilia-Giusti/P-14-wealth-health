@@ -14,8 +14,6 @@ import React, { useState } from "react";
 import DebouncedInput from "../components/DebouncedInput";
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 import { handleOpenNav } from "../utils/handleOpenNav";
-
-// import { useAppSelector } from "../app/hooks";
 import { newEmployeeInt } from "../types/models";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { SpinnerCircular } from "spinners-react";
