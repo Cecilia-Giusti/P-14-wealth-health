@@ -29,6 +29,7 @@ const DebouncedInput = ({
       {...props}
       value={value}
       onChange={(e) => setValue(e.target.value)}
+      data-testid="searchbar"
     />
   );
 };
