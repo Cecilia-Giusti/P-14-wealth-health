@@ -33,10 +33,11 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --ignore src/mock",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "server": "json-server --w src/assets/data/database.json --port 3004",
-    "test": "react-scripts test --coverage --watchAll",
+    "test": "react-scripts test --watchAll",
+    "coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed"
   },
