@@ -6,10 +6,11 @@ const Header = () => {
   const dispatch = useAppDispatch();
   const navOpen = useAppSelector((state) => state.reponsive.openHeader);
   return (
-    <header>
+    <header data-testid="header">
       <button
         id="buttonNavClose"
         aria-label="Close"
+        data-testid="button-close"
         onClick={() => handleOpenNav(dispatch, navOpen)}
       >
         <i className="fa-solid fa-xmark"></i>
@@ -20,10 +21,10 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          <li>
+          <li data-testid="create-employee">
             <NavLink to={"/P-14-wealth-health/"}>create employee</NavLink>
           </li>{" "}
-          <li>
+          <li data-testid="current-employees">
             <NavLink to={"/P-14-wealth-health/current-employees"}>
               current employees
             </NavLink>
