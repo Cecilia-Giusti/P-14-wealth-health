@@ -166,7 +166,7 @@ const CreateEmployee = () => {
       </form>
 
       <Modal isOpen={modalIsOpen} className="modal">
-        <button onClick={handleCloseModal}>
+        <button id="confirmationModale" onClick={handleCloseModal}>
           <i className="fa-regular fa-circle-xmark"></i>
         </button>
         <p>Employee created</p>
