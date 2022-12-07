@@ -134,6 +134,7 @@ const EmployeeList = () => {
           <div className="filter__show">
             <label htmlFor="number_show">Show</label>
             <select
+              data-testid="number-show"
               className="number_show"
               name="number_show"
               value={table.getState().pagination.pageSize}
@@ -155,6 +156,7 @@ const EmployeeList = () => {
             value={globalFilter ?? ""}
             onChange={(value) => setGlobalFilter(String(value))}
             className="p-2 font-lg shadow border border-block searchBar"
+            data-testid="searchBar"
             placeholder="Search"
           />
           <i className="fab fa-sistrix searchBar__icon"></i>
@@ -224,7 +226,7 @@ const EmployeeList = () => {
         </table>
       </div>
       <div className="pagination">
-        <div className="pagination__buttons">
+        <div className="pagination__buttons" data-testid="pagination__buttons">
           <button
             className="pagination__button"
             onClick={() => table.setPageIndex(0)}
@@ -240,6 +242,7 @@ const EmployeeList = () => {
             {"<"}
           </button>
           <button
+            data-testid="next"
             className="pagination__button"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}

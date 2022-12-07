@@ -1,5 +1,6 @@
 {
-  "verbose": false,
+  "verbose": true,
+  "preset": "ts-jest",
   "collectCoverage": true,
   "collectCoverageFrom": ["**/*.{js,jsx,tsx,ts}", "!**/node_modules/**"]
 }
