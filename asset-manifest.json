@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/P-14-wealth-health/static/js/main.ceabc593.js",
+    "main.js": "/P-14-wealth-health/static/js/main.bdc93f9d.js",
     "static/js/870.8d5e0c89.chunk.js": "/P-14-wealth-health/static/js/870.8d5e0c89.chunk.js",
     "static/js/312.d587068b.chunk.js": "/P-14-wealth-health/static/js/312.d587068b.chunk.js",
     "static/js/988.20608077.chunk.js": "/P-14-wealth-health/static/js/988.20608077.chunk.js",
     "static/js/284.552932f8.chunk.js": "/P-14-wealth-health/static/js/284.552932f8.chunk.js",
     "static/js/207.2cc906ff.chunk.js": "/P-14-wealth-health/static/js/207.2cc906ff.chunk.js",
     "index.html": "/P-14-wealth-health/index.html",
-    "main.ceabc593.js.map": "/P-14-wealth-health/static/js/main.ceabc593.js.map",
+    "main.bdc93f9d.js.map": "/P-14-wealth-health/static/js/main.bdc93f9d.js.map",
     "870.8d5e0c89.chunk.js.map": "/P-14-wealth-health/static/js/870.8d5e0c89.chunk.js.map",
     "312.d587068b.chunk.js.map": "/P-14-wealth-health/static/js/312.d587068b.chunk.js.map",
     "988.20608077.chunk.js.map": "/P-14-wealth-health/static/js/988.20608077.chunk.js.map",
@@ -15,6 +15,6 @@
     "207.2cc906ff.chunk.js.map": "/P-14-wealth-health/static/js/207.2cc906ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ceabc593.js"
+    "static/js/main.bdc93f9d.js"
   ]
 }
