@@ -67,6 +67,7 @@ const CreateEmployee = () => {
 
   return (
     <main
+      data-testid="main-createdEmployee"
       className={
         openHeader ? "main createEmployee" : "main createEmployee close"
       }
@@ -103,7 +104,7 @@ const CreateEmployee = () => {
                 id="birthday"
                 onChange={(date: Date) => setBirthday(date)}
               />
-              <i className="fa-regular fa-calendar dateInput__icon"></i>
+              <i className="far fa-calendar dateInput__icon"></i>
             </div>
 
             <div className="startDay__content">
@@ -114,7 +115,7 @@ const CreateEmployee = () => {
                 selected={startDay}
                 onChange={(date: Date) => setStartDay(date)}
               />
-              <i className="fa-regular fa-calendar dateInput__icon"></i>
+              <i className="far fa-calendar dateInput__icon"></i>
             </div>
             <div className="departements__content">
               <label htmlFor="departements">Department</label>

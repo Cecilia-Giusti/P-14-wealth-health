@@ -12,7 +12,7 @@ const ButtonNav = () => {
         aria-label="Open nav"
         onClick={() => handleOpenNav(dispatch, openHeader)}
       >
-        <i className="fa-solid fa-bars"></i>
+        <i className="fas fa-bars"></i>
       </button>
     </div>
   );
