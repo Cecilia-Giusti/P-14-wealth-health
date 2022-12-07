@@ -39,4 +39,28 @@ describe('Given the user is on the home page"', () => {
       cy.get('[id="confirmationModale"]').click();
     });
   });
+
+  describe("When the user completes all fields corrects and one field incorrect", () => {
+    it("Then the user should see a error message", () => {
+      cy.visit("http://localhost:3000/P-14-wealth-health/");
+
+      cy.get('[id="firstName"]').type("John");
+      cy.get('[id="lastName"]').type("Smith");
+      cy.get('[id="departements"]').select("Engineering");
+      cy.get('[id="street"]').type("38 ch des allouettes");
+      cy.get('[id="city"]').type("LA");
+      cy.get('[id="states"]').select("California");
+      cy.get('[id="zipCode"]').type("986638");
+
+      cy.get("input[type=submit]").should("be.visible");
+      cy.get("input[type=submit]").click();
+
+      cy.get('[id="errorMessage"]').should("be.visible");
+      cy.get('[id="birthday"]').should(
+        "have.attr",
+        "style",
+        "border-bottom: 1px solid red"
+      );
+    });
+  });
 });
