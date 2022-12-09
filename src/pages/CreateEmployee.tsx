@@ -169,7 +169,9 @@ const CreateEmployee = () => {
         <button id="confirmationModale" onClick={handleCloseModal}>
           <i className="far fa-times-circle"></i>
         </button>
-        <p>Employee created</p>
+        <div className="modal__content">
+          <i className="fas fa-check"></i> <p>Employee created</p>
+        </div>
       </Modal>
     </main>
   );
