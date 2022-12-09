@@ -3,6 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/assets/images/background-image.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/assets/fonts/ABeeZee-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/assets/fonts/Montserrat-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <script
+      defer
+      src="https://kit.fontawesome.com/1365cabd78.js"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -10,18 +35,14 @@
       content="Web site created using create-react-app"
     />
     <title>Wealth health</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="stylesheet" href="%PUBLIC_URL%/style_compressed.css" />
+    <link
+      rel="stylesheet"
+      href="%PUBLIC_URL%/style_compressed.css"
+      media="screen"
+    />
   </head>
   <body>
     <div id="root"></div>

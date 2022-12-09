@@ -67,6 +67,7 @@ const CreateEmployee = () => {
 
   return (
     <main
+      data-testid="main-createdEmployee"
       className={
         openHeader ? "main createEmployee" : "main createEmployee close"
       }
@@ -75,7 +76,12 @@ const CreateEmployee = () => {
       }}
     >
       <h1>Create Employee</h1>
-      <span id="errorMessage" className="error-message hidden">
+      <span
+        id="errorMessage"
+        className="error-message hidden"
+        aria-hidden
+        aria-disabled
+      >
         Please complete correctly all fields
       </span>
       <form id="form" ref={form} onSubmit={(e) => handleSubmit(e)}>
@@ -83,11 +89,11 @@ const CreateEmployee = () => {
           <div className="form__content--left">
             <div className="firstName__content">
               <label htmlFor="firstName">First Name</label>
-              <input type="text" name="firstName" autoFocus />
+              <input type="text" name="firstName" id="firstName" autoFocus />
             </div>
             <div className="lastName__content">
               <label htmlFor="lastName">Last Name</label>
-              <input type="text" name="lastName" />
+              <input type="text" name="lastName" id="lastName" />
             </div>
 
             <div className="birthday__content">
@@ -95,22 +101,24 @@ const CreateEmployee = () => {
               <DatePicker
                 className="dateInput"
                 selected={birthday}
+                id="birthday"
                 onChange={(date: Date) => setBirthday(date)}
               />
-              <i className="fa-regular fa-calendar dateInput__icon"></i>
+              <i className="far fa-calendar dateInput__icon"></i>
             </div>
 
             <div className="startDay__content">
               <label htmlFor="startDay">Start day</label>
               <DatePicker
                 className="dateInput"
+                id="startDay"
                 selected={startDay}
                 onChange={(date: Date) => setStartDay(date)}
               />
-              <i className="fa-regular fa-calendar dateInput__icon"></i>
+              <i className="far fa-calendar dateInput__icon"></i>
             </div>
             <div className="departements__content">
-              <label htmlFor="departments">Department</label>
+              <label htmlFor="departements">Department</label>
               <DropdownMenu
                 name="departements"
                 options={departements}
@@ -123,11 +131,11 @@ const CreateEmployee = () => {
           <div className="form__content--right">
             <div className="street__content">
               <label htmlFor="street">Street</label>
-              <input type="text" name="street" />
+              <input type="text" name="street" id="street" />
             </div>
             <div className="city__content">
               <label htmlFor="city">City</label>
-              <input type="text" name="city" />
+              <input type="text" name="city" id="city" />
             </div>
             <div className="states__content">
               <label htmlFor="states">State</label>
@@ -141,7 +149,7 @@ const CreateEmployee = () => {
             </div>
             <div className="zipCode__content">
               <label htmlFor="zipCode">Zip Code</label>
-              <input type="text" name="zipCode" />
+              <input type="text" name="zipCode" id="zipCode" />
             </div>
           </div>
         </div>
@@ -158,8 +166,8 @@ const CreateEmployee = () => {
       </form>
 
       <Modal isOpen={modalIsOpen} className="modal">
-        <button onClick={handleCloseModal}>
-          <i className="fa-regular fa-circle-xmark"></i>
+        <button id="confirmationModale" onClick={handleCloseModal}>
+          <i className="far fa-times-circle"></i>
         </button>
         <p>Employee created</p>
       </Modal>

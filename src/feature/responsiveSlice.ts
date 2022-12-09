@@ -15,10 +15,8 @@ export const responsiveSlice = createSlice({
     setOpenHeader: (state, action: PayloadAction<boolean>) => {
       state.openHeader = action.payload;
     },
-
-    reset: () => initialState,
   },
 });
 
-export const { setOpenHeader, reset } = responsiveSlice.actions;
+export const { setOpenHeader } = responsiveSlice.actions;
 export default responsiveSlice.reducer;
