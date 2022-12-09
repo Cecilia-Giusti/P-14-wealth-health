@@ -23,8 +23,12 @@ const formCheck = async (
     const cityInput = dataForm.current[6] as HTMLInputElement;
     const zipCodeInput = dataForm.current[8] as HTMLInputElement;
 
-    const departement = departmentValue !== null ? departmentValue : null;
-    const state = stateValue !== null ? stateValue : null;
+    const departementSelect =
+      departmentValue !== null && departmentValue !== ""
+        ? departmentValue
+        : null;
+    const stateSelect =
+      stateValue !== null && stateValue !== "" ? stateValue : null;
 
     if (
       (firstNameInput.value &&
@@ -35,18 +39,18 @@ const formCheck = async (
         cityInput.value &&
         zipCodeInput.value) !== "" &&
       birthdayInput.value < startdayInput.value &&
-      departement &&
-      state
+      departementSelect &&
+      stateSelect
     ) {
       const newEmployee: newEmployeeInt = {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
         birthday: birthdayInput.value,
         startDay: startdayInput.value,
-        departement: departement,
+        departement: departementSelect,
         street: streetInput.value,
         city: cityInput.value,
-        state: state,
+        state: stateSelect,
         zipCode: zipCodeInput.value,
       };
 
@@ -67,10 +71,10 @@ const formCheck = async (
             ? true
             : false,
         startDay: startdayInput.value === "" ? true : false,
-        departement: departement === null ? true : false,
+        departement: departementSelect === null ? true : false,
         street: streetInput.value === "" ? true : false,
         city: cityInput.value === "" ? true : false,
-        state: state === null ? true : false,
+        state: stateSelect === null ? true : false,
         zipCode: zipCodeInput.value === "" ? true : false,
       };
 

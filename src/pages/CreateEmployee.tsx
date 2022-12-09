@@ -55,7 +55,6 @@ const CreateEmployee = () => {
     if (check) {
       dispatch(reset());
       setModalIsOpen(true);
-      console.log(check);
     }
   };
 
