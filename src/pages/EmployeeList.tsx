@@ -188,7 +188,9 @@ const EmployeeList = () => {
                         {{
                           asc: <i className="fas fa-chevron-down"></i>,
                           desc: <i className="fas fa-chevron-up"></i>,
-                        }[header.column.getIsSorted() as string] ?? null}
+                        }[header.column.getIsSorted() as string] ?? (
+                          <i className="fas fa-arrows-alt-v"></i>
+                        )}
                       </div>
                     )}
                   </th>
