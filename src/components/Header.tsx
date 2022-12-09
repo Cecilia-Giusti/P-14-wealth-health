@@ -13,7 +13,7 @@ const Header = () => {
         data-testid="button-close"
         onClick={() => handleOpenNav(dispatch, navOpen)}
       >
-        <i className="fa-solid fa-xmark"></i>
+        <i className="fas fa-times"></i>
       </button>
       <div className="banner">
         <img src="./assets/images/logo1.png" alt="Logo wealth health" />

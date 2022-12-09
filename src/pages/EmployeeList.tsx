@@ -186,8 +186,8 @@ const EmployeeList = () => {
                           header.getContext()
                         )}
                         {{
-                          asc: <i className="fa-solid fa-chevron-down"></i>,
-                          desc: <i className="fa-solid fa-chevron-up"></i>,
+                          asc: <i className="fas fa-chevron-down"></i>,
+                          desc: <i className="fas fa-chevron-up"></i>,
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                     )}

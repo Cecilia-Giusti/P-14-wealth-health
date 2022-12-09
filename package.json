@@ -35,7 +35,8 @@
     "test": "react-scripts test --watchAll",
     "coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
-    "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed"
+    "sass": "sass --watch ./src/assets/styles/index.scss:./public/style_compressed.css --style compressed",
+    "cypress": "npx cypress open"
   },
   "eslintConfig": {
     "extends": [
