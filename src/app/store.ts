@@ -17,7 +17,7 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReducer,
     preloadedState,
-    devTools: false,
+    devTools: true,
   });
 };
 
