@@ -16,7 +16,10 @@ const Header = () => {
         <i className="fas fa-times"></i>
       </button>
       <div className="banner">
-        <img src="./assets/images/logo1.png" alt="Logo wealth health" />
+        <img
+          src="./assets/images/logo1_compressed.png"
+          alt="Logo wealth health"
+        />
         <p className="title">HRNET</p>
       </div>
       <nav>
