@@ -9,6 +9,15 @@
     align-items: center;
     width: 100%;
   }
+
+  .errorServer {
+    text-align: center;
+    padding-top: 50px;
+    p {
+      font-size: 2rem;
+      padding-top: 20px;
+    }
+  }
 }
 
 input.button.employeeList__header--button {

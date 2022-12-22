@@ -727,6 +727,18 @@
       "state": "Virginia",
       "zipCode": "26890",
       "id": 56
+    },
+    {
+      "firstName": "Cecilia",
+      "lastName": "Giusti",
+      "birthday": "11/28/2022",
+      "startDay": "12/22/2022",
+      "departement": "Engineering",
+      "street": "43 Chemin des Plateaux",
+      "city": "Floirac",
+      "state": "Hawaii",
+      "zipCode": "33270",
+      "id": 57
     }
   ]
 }

@@ -54,11 +54,7 @@ const formCheck = async (
         zipCode: zipCodeInput.value,
       };
 
-      try {
-        postUser(newEmployee, dispatch);
-      } catch (error) {
-        console.error(error);
-      }
+      postUser(newEmployee, dispatch);
 
       return true;
     } else {

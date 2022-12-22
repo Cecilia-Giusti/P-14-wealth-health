@@ -3,10 +3,12 @@ import { newEmployeeInt } from "../types/models";
 
 interface usersInt {
   users: Array<newEmployeeInt>;
+  errorGetUser: boolean;
 }
 
 const initialState: usersInt = {
   users: [],
+  errorGetUser: false,
 };
 
 export const usersSlice = createSlice({
@@ -19,8 +21,11 @@ export const usersSlice = createSlice({
     addUser: (state, action: PayloadAction<newEmployeeInt>) => {
       state.users = [...state.users, action.payload];
     },
+    setErrorGetUser: (state, action: PayloadAction<boolean>) => {
+      state.errorGetUser = action.payload;
+    },
   },
 });
 
-export const { setUsersData, addUser } = usersSlice.actions;
+export const { setUsersData, addUser, setErrorGetUser } = usersSlice.actions;
 export default usersSlice.reducer;

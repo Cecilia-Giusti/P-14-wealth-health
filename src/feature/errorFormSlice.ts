@@ -36,6 +36,7 @@ export const errorFormSlice = createSlice({
     setErrorMessage: (state, action: PayloadAction<boolean>) => {
       state.errorMessage = action.payload;
     },
+
     reset: () => initialState,
   },
 });

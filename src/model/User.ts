@@ -25,36 +25,17 @@ export class User {
     this._id = data.id;
   }
 
-  get firstName() {
-    return this._firstName;
-  }
-
-  get lastName() {
-    return this._lastName;
-  }
-
-  get birthday() {
-    return this._birthday;
-  }
-  get startDay() {
-    return this._startDay;
-  }
-  get departement() {
-    return this._departement;
-  }
-  get street() {
-    return this._street;
-  }
-  get city() {
-    return this._city;
-  }
-  get state() {
-    return this._state;
-  }
-  get zipCode() {
-    return this._zipCode;
-  }
-  get id() {
-    return this._id;
+  updateUsersData() {
+    return {
+      firstName: this._firstName,
+      lastName: this._lastName,
+      birthday: this._birthday,
+      startDay: this._startDay,
+      departement: this._departement,
+      street: this._street,
+      city: this._city,
+      state: this._state,
+      zipCode: this._zipCode,
+    };
   }
 }

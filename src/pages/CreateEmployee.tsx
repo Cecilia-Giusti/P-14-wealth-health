@@ -19,7 +19,9 @@ const CreateEmployee = () => {
   const errorMessageData = useAppSelector(
     (state) => state.errorForm.errorMessage
   );
+
   const openHeader = useAppSelector((state) => state.reponsive.openHeader);
+  const errorServer = useAppSelector((state) => state.users.errorGetUser);
 
   const [departementValue, setDepartementValue] = useState(null);
   const [stateValue, setStateValue] = useState(null);
@@ -33,8 +35,13 @@ const CreateEmployee = () => {
 
   useEffect(() => {
     formError(dataNoError);
-    errorMessage(errorMessageData);
-  }, [dataNoError, errorMessageData]);
+
+    if (errorServer) {
+      errorMessage(errorServer);
+    } else {
+      errorMessage(errorMessageData);
+    }
+  }, [dataNoError, errorMessageData, errorServer]);
 
   const resetForm = () => {
     const formDOM = document.getElementById("form");
@@ -50,11 +57,18 @@ const CreateEmployee = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const check = await formCheck(form, departementValue, stateValue, dispatch);
+    if (!errorServer) {
+      const check = await formCheck(
+        form,
+        departementValue,
+        stateValue,
+        dispatch
+      );
 
-    if (check) {
-      dispatch(reset());
-      setModalIsOpen(true);
+      if (check) {
+        dispatch(reset());
+        setModalIsOpen(true);
+      }
     }
   };
 
@@ -81,7 +95,9 @@ const CreateEmployee = () => {
         aria-hidden
         aria-disabled
       >
-        Please complete correctly all fields
+        {errorServer
+          ? "Please try again later "
+          : "Please complete correctly all fields"}
       </span>
       <form id="form" ref={form} onSubmit={(e) => handleSubmit(e)}>
         <div className="form__content">
