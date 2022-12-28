@@ -6,7 +6,7 @@ import { renderWithProviders } from "../../utils/test-utils";
 
 describe("Given the user is on the form", () => {
   describe("When the form is visible", () => {
-    test("Then the title is visible", async () => {
+    test("Then the title should be visible", async () => {
       //Store
       const store = setupStore();
       renderWithProviders(
