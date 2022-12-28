@@ -1,6 +1,11 @@
 {
   "verbose": true,
   "preset": "ts-jest",
+  "transform": {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "transformIgnorePatterns": ["/node_modules/@cecigiu2b"],
   "collectCoverage": true,
   "collectCoverageFrom": ["**/*.{js,jsx,tsx,ts}", "!**/node_modules/**"]
 }
