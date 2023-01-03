@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useAppDispatch } from "./app/hooks";
 import ButtonNav from "./components/ButtonNav";
 import Header from "./components/Header";
@@ -16,18 +16,15 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <ButtonNav />
       <Routes>
-        <Route path="/P-14-wealth-health/" element={<CreateEmployee />} />
-        <Route
-          path="/P-14-wealth-health/current-employees"
-          element={<EmployeeList />}
-        />
-        <Route path="/P-14-wealth-health/*" element={<Error />} />
+        <Route path="/" element={<CreateEmployee />} />
+        <Route path="/current-employees" element={<EmployeeList />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

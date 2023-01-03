@@ -25,12 +25,10 @@ const Header = () => {
       <nav>
         <ul>
           <li data-testid="create-employee">
-            <NavLink to={"/P-14-wealth-health/"}>create employee</NavLink>
+            <NavLink to={"/"}>create employee</NavLink>
           </li>{" "}
           <li data-testid="current-employees">
-            <NavLink to={"/P-14-wealth-health/current-employees"}>
-              current employees
-            </NavLink>
+            <NavLink to={"/current-employees"}>current employees</NavLink>
           </li>
         </ul>
       </nav>
