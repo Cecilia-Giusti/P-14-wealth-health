@@ -25,7 +25,7 @@ export class User {
     this._id = data.id;
   }
 
-  updateUsersData() {
+  updateUser() {
     return {
       firstName: this._firstName,
       lastName: this._lastName,
