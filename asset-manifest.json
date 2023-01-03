@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/P-14-wealth-health/static/js/main.265b6ab3.js",
+    "main.js": "/P-14-wealth-health/static/js/main.b89b1fd7.js",
     "static/js/988.20608077.chunk.js": "/P-14-wealth-health/static/js/988.20608077.chunk.js",
     "index.html": "/P-14-wealth-health/index.html",
-    "main.265b6ab3.js.map": "/P-14-wealth-health/static/js/main.265b6ab3.js.map",
+    "main.b89b1fd7.js.map": "/P-14-wealth-health/static/js/main.b89b1fd7.js.map",
     "988.20608077.chunk.js.map": "/P-14-wealth-health/static/js/988.20608077.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.265b6ab3.js"
+    "static/js/main.b89b1fd7.js"
   ]
 }
