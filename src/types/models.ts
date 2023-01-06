@@ -3,7 +3,7 @@ export interface newEmployeeInt {
   lastName?: string;
   birthday?: Date | string;
   startDay?: Date | string;
-  departement?: string | null;
+  department?: string | null;
   street?: string;
   city?: string;
   state?: string | null;
@@ -16,7 +16,7 @@ export interface dataErrorInt {
   lastName?: boolean;
   birthday?: boolean;
   startDay?: boolean;
-  departement?: boolean;
+  department?: boolean;
   street?: boolean;
   city?: boolean;
   state?: boolean;
@@ -28,7 +28,7 @@ export interface userDataInt {
   lastName: string;
   birthday: string;
   startDay: string;
-  departement: string;
+  department: string;
   street: string;
   city: string;
   state: string;

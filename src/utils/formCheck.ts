@@ -47,7 +47,7 @@ const formCheck = async (
         lastName: lastNameInput.value,
         birthday: birthdayInput.value,
         startDay: startdayInput.value,
-        departement: departementSelect,
+        department: departementSelect,
         street: streetInput.value,
         city: cityInput.value,
         state: stateSelect,
@@ -67,7 +67,7 @@ const formCheck = async (
             ? true
             : false,
         startDay: startdayInput.value === "" ? true : false,
-        departement: departementSelect === null ? true : false,
+        department: departementSelect === null ? true : false,
         street: streetInput.value === "" ? true : false,
         city: cityInput.value === "" ? true : false,
         state: stateSelect === null ? true : false,

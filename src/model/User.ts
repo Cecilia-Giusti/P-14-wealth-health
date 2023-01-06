@@ -5,7 +5,7 @@ export class User {
   _lastName: string;
   _birthday: string | Date;
   _startDay: string | Date;
-  _departement: string;
+  _department: string;
   _street: string;
   _city: string;
   _state: string;
@@ -17,7 +17,7 @@ export class User {
     this._lastName = data.lastName;
     this._birthday = data.birthday;
     this._startDay = data.startDay;
-    this._departement = data.departement;
+    this._department = data.department;
     this._street = data.street;
     this._city = data.city;
     this._state = data.state;
@@ -25,13 +25,17 @@ export class User {
     this._id = data.id;
   }
 
+  updateDate = (dateString: string | Date) => {
+    return new Date(dateString);
+  };
+
   updateUser() {
     return {
       firstName: this._firstName,
       lastName: this._lastName,
-      birthday: this._birthday,
-      startDay: this._startDay,
-      departement: this._departement,
+      birthday: this.updateDate(this._birthday).toJSON(),
+      startDay: this.updateDate(this._startDay).toJSON(),
+      department: this._department,
       street: this._street,
       city: this._city,
       state: this._state,

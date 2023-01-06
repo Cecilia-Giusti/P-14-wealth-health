@@ -16,9 +16,9 @@ export const getUsers = (dispatch: Dispatch<AnyAction>) => {
 
       for (let i = 0; i < dataUsers.length; i++) {
         let newUser = new User(dataUsers[i]);
-
         newDataUsers.push(newUser.updateUser());
       }
+
       dispatch(setErrorGetUser(false));
       return dispatch(setUsersData(newDataUsers));
     })

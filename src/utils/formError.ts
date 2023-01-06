@@ -19,7 +19,7 @@ const formError = (dataError: dataErrorInt) => {
   dataError.birthday
     ? birthdayDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : birthdayDOM?.removeAttribute("style");
-  dataError.departement
+  dataError.department
     ? departementDOM?.setAttribute("style", "border-bottom: 1px solid red")
     : departementDOM?.removeAttribute("style");
   dataError.street

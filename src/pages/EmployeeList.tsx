@@ -1,5 +1,4 @@
 import {
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
@@ -10,12 +9,13 @@ import {
   getPaginationRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import DebouncedInput from "../components/DebouncedInput";
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 import { handleOpenNav } from "../utils/handleOpenNav";
 import { newEmployeeInt } from "../types/models";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import formDate from "../utils/formDate";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -42,60 +42,62 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
 const EmployeeList = () => {
   const data = useAppSelector((state) => state.users.users);
 
-  const columnHelper = createColumnHelper<newEmployeeInt>();
-
-  const columns: ColumnDef<newEmployeeInt, any>[] = [
-    columnHelper.accessor((row) => row.firstName, {
-      id: "firstName",
-      cell: (info) => info.getValue(),
-      header: () => <span>First Name</span>,
-    }),
-    columnHelper.accessor((row) => row.lastName, {
-      id: "lastName",
-      cell: (info) => info.getValue(),
-      header: () => <span>Last Name</span>,
-    }),
-    columnHelper.accessor((row) => row.startDay, {
-      id: "startDay",
-      cell: (info) => info.getValue(),
-      header: () => <span>Start Day</span>,
-    }),
-    columnHelper.accessor((row) => row.departement, {
-      id: "department",
-      cell: (info) => info.getValue(),
-      header: () => <span>Departement</span>,
-    }),
-    columnHelper.accessor((row) => row.birthday, {
-      id: "birthday",
-      cell: (info) => info.getValue(),
-      header: () => <span>Birthday</span>,
-    }),
-    columnHelper.accessor((row) => row.street, {
-      id: "street",
-      cell: (info) => info.getValue(),
-      header: () => <span>Street</span>,
-    }),
-    columnHelper.accessor((row) => row.city, {
-      id: "city",
-      cell: (info) => info.getValue(),
-      header: () => <span>City</span>,
-    }),
-    columnHelper.accessor((row) => row.state, {
-      id: "state",
-      cell: (info) => info.getValue(),
-      header: () => <span>State</span>,
-    }),
-    columnHelper.accessor((row) => row.zipCode, {
-      id: "zipCode",
-      cell: (info) => info.getValue(),
-      header: () => <span>Zip Code</span>,
-    }),
-  ];
+  const columns = useMemo<ColumnDef<newEmployeeInt>[]>(
+    () => [
+      {
+        accessorKey: "firstName",
+        cell: (info) => info.getValue(),
+        header: () => <span>First Name</span>,
+      },
+      {
+        accessorKey: "lastName",
+        cell: (info) => info.getValue(),
+        header: () => <span>Last Name</span>,
+      },
+      {
+        accessorKey: "startDay",
+        header: () => <span>Start Day</span>,
+      },
+      {
+        accessorKey: "department",
+        cell: (info) => info.getValue(),
+        header: () => <span>Department</span>,
+      },
+      {
+        accessorKey: "birthday",
+        header: () => <span>Birthday</span>,
+      },
+      {
+        accessorKey: "street",
+        cell: (info) => info.getValue(),
+        header: () => <span>Street</span>,
+      },
+      {
+        accessorKey: "city",
+        cell: (info) => info.getValue(),
+        header: () => <span>City</span>,
+      },
+      {
+        accessorKey: "state",
+        cell: (info) => info.getValue(),
+        header: () => <span>State</span>,
+      },
+      {
+        accessorKey: "zipCode",
+        cell: (info) => info.getValue(),
+        header: () => <span>Zip Code</span>,
+      },
+    ],
+    []
+  );
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
   const dispatch = useAppDispatch();
   const openHeader = useAppSelector((state) => state.reponsive.openHeader);
+
+  const regExpBirthday = new RegExp(/[0-9]{0,}_birthday/);
+  const regExpStartDay = new RegExp(/[0-9]{0,}_startDay/);
 
   const table = useReactTable({
     data,
@@ -221,10 +223,15 @@ const EmployeeList = () => {
                 <tr key={row.id}>
                   {row.getVisibleCells().map((cell) => (
                     <td key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {regExpBirthday.test(cell.id) ||
+                      regExpStartDay.test(cell.id)
+                        ? regExpBirthday.test(cell.id)
+                          ? formDate(cell.row.original.birthday)
+                          : formDate(cell.row.original.startDay)
+                        : flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                     </td>
                   ))}
                 </tr>

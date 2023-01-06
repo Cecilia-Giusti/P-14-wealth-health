@@ -14,7 +14,7 @@ const initialState: errorFormInt = {
     lastName: false,
     birthday: false,
     startDay: false,
-    departement: false,
+    department: false,
     street: false,
     city: false,
     state: false,
