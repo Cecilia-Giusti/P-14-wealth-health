@@ -1,7 +1,12 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { handleOpenNav } from "../utils/handleOpenNav";
 
-const ButtonNav = () => {
+/**
+ * Component to view navigation button
+ * @component
+ * @return {JSX.Element}
+ */
+const ButtonNav = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const openHeader = useAppSelector((state) => state.reponsive.openHeader);
   return (

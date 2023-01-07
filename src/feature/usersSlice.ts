@@ -11,6 +11,10 @@ const initialState: usersInt = {
   errorGetUser: false,
 };
 
+/**
+ * Create Slice for Redux - Users
+ * @function
+ */
 export const usersSlice = createSlice({
   name: "users",
   initialState,

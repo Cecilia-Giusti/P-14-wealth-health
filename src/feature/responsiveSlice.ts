@@ -8,6 +8,10 @@ const initialState: responsiveInt = {
   openHeader: false,
 };
 
+/**
+ * Create Slice for Redux - open header for responsive
+ * @function
+ */
 export const responsiveSlice = createSlice({
   name: "responsive",
   initialState,

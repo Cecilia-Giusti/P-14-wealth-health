@@ -7,7 +7,13 @@ import { newEmployeeInt } from "../types/models";
 
 const ADRESSE = "http://localhost:3004";
 
-export const getUsers = (dispatch: Dispatch<AnyAction>) => {
+/**
+ * Function to get employees
+ * @function
+ * @param {Dispatch<AnyAction>} dispatch - const useAppDispatch
+ * @return {Promise<void>}
+ */
+export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<void> =>
   axios
     .get(`${ADRESSE}/users`)
     .then((res) => {
@@ -26,12 +32,18 @@ export const getUsers = (dispatch: Dispatch<AnyAction>) => {
       console.error(error);
       dispatch(setErrorGetUser(true));
     });
-};
 
+/**
+ * Function to post employee
+ * @function
+ * @param {newEmployeeInt} userData - new user to post
+ * @param {Dispatch<AnyAction>} dispatch - const useAppDispatch
+ * @return {Promise<void>}
+ */
 export const postUser = (
   userData: newEmployeeInt,
   dispatch: Dispatch<AnyAction>
-) => {
+): Promise<void> =>
   axios
     .post(`${ADRESSE}/users`, userData)
     .then((res) => {
@@ -42,4 +54,3 @@ export const postUser = (
       console.error(error);
       console.log("erreur ici");
     });
-};

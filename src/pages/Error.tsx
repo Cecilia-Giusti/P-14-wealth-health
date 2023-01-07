@@ -2,7 +2,12 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { handleOpenNav } from "../utils/handleOpenNav";
 
-const Error = () => {
+/**
+ * Component to display the error page 404
+ * @component
+ * @return {JSX.Element}
+ */
+const Error = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const openHeader = useAppSelector((state) => state.reponsive.openHeader);
   return (

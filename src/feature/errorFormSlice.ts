@@ -23,6 +23,10 @@ const initialState: errorFormInt = {
   errorMessage: false,
 };
 
+/**
+ * Create Slice for Redux - error Form
+ * @function
+ */
 export const errorFormSlice = createSlice({
   name: "errorForm",
   initialState,

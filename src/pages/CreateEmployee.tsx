@@ -11,7 +11,12 @@ import formError from "../utils/formError";
 import errorMessage from "../utils/errorMessage";
 import { handleOpenNav } from "../utils/handleOpenNav";
 
-const CreateEmployee = () => {
+/**
+ * Component to display the form
+ * @component
+ * @return {JSX.Element}
+ */
+const CreateEmployee = (): JSX.Element => {
   Modal.setAppElement("#root");
   const dispatch = useAppDispatch();
 

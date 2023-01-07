@@ -8,7 +8,7 @@ import EmployeeList from "./pages/EmployeeList";
 import Error from "./pages/Error";
 import { getUsers } from "./service/user";
 
-const App = () => {
+const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {

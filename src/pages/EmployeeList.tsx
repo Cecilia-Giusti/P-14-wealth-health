@@ -39,7 +39,12 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   return itemRank.passed;
 };
 
-const EmployeeList = () => {
+/**
+ * Component to display the employees table
+ * @component
+ * @return {JSX.Element}
+ */
+const EmployeeList = (): JSX.Element => {
   const data = useAppSelector((state) => state.users.users);
 
   const columns = useMemo<ColumnDef<newEmployeeInt>[]>(

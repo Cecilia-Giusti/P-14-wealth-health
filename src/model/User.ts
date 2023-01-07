@@ -1,5 +1,10 @@
 import { userDataInt } from "../types/models";
 
+/**Data modelling class
+ * @class
+ * @constructor
+ * @param {userDataInt} data - A user
+ */
 export class User {
   _firstName: string;
   _lastName: string;

@@ -2,7 +2,12 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { handleOpenNav } from "../utils/handleOpenNav";
 
-const Header = () => {
+/**
+ * Component to view header
+ * @component
+ * @return {JSX.Element}
+ */
+const Header = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const navOpen = useAppSelector((state) => state.reponsive.openHeader);
   return (
