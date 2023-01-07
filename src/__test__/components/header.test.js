@@ -1,5 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { setupStore } from "../../app/store";
 import ButtonNav from "../../components/ButtonNav";
 import Header from "../../components/Header";
@@ -12,9 +12,9 @@ describe("Given the user is on the home page", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Header />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -27,9 +27,9 @@ describe("Given the user is on the home page", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Header />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -48,9 +48,9 @@ describe("Given the user is on the home page", () => {
       // Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Header />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -65,10 +65,10 @@ describe("Given the user is on the home page", () => {
       // Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Header />
           <ButtonNav />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -95,10 +95,10 @@ describe("Given the user is on the home page", () => {
       // Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Header />
           <ButtonNav />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 

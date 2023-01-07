@@ -1,5 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { setupStore } from "../../app/store";
 import ButtonNav from "../../components/ButtonNav";
 import Error from "../../pages/Error";
@@ -12,9 +12,9 @@ describe("Given the user is on the bad url page", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Error />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -35,9 +35,9 @@ describe("Given the user is on the bad url page on mobile or tablet", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <Error />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -53,10 +53,10 @@ describe("Given the user is on the bad url page on mobile or tablet", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <ButtonNav />
           <Error />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
@@ -84,10 +84,10 @@ describe("Given the user is on the bad url page on mobile or tablet", () => {
       //Store
       const store = setupStore();
       renderWithProviders(
-        <BrowserRouter>
+        <HashRouter>
           <ButtonNav />
           <Error />
-        </BrowserRouter>,
+        </HashRouter>,
         { store }
       );
 
