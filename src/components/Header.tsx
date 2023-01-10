@@ -8,6 +8,8 @@ import { handleOpenNav } from "../utils/handleOpenNav";
  * @return {JSX.Element}
  */
 const Header = (): JSX.Element => {
+  const url = document.location.href;
+  const regExUrl = new RegExp(/http:\/\/localhost/);
   const dispatch = useAppDispatch();
   const navOpen = useAppSelector((state) => state.reponsive.openHeader);
   return (
@@ -21,10 +23,18 @@ const Header = (): JSX.Element => {
         <i className="fas fa-times"></i>
       </button>
       <div className="banner">
-        <img
-          src="./assets/images/logo1_compressed.png"
-          alt="Logo wealth health"
-        />
+        {regExUrl.test(url) ? (
+          <img
+            src="./P-14-wealth-health/assets/images/logo1_compressed.png"
+            alt="Logo wealth health"
+          />
+        ) : (
+          <img
+            src="./assets/images/logo1_compressed.png"
+            alt="Logo wealth health"
+          />
+        )}
+
         <p className="title">HRNET</p>
       </div>
       <nav>
