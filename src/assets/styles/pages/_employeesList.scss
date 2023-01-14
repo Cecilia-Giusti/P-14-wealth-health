@@ -148,10 +148,11 @@ input.button.employeeList__header--button {
   overflow: hidden;
   margin-bottom: 80px;
 
-  @media screen and (max-width: 1070px) {
+ 
     overflow-y: scroll;
     overflow-x: scroll;
-  }
+    
+  
 
   @media screen and (max-height: 845px) {
     max-height: 600px;
@@ -165,8 +166,8 @@ input.button.employeeList__header--button {
     th,
     td {
       padding: 10px 15px;
-      @media screen and (max-width: 1317px) {
-        padding: 5px 10px;
+      @media screen and (max-width: 1400px) {
+        padding: 5px 15px;
       }
 
       @media screen and (max-width: 1205px) {
