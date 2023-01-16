@@ -5,7 +5,7 @@ import { setUsersData, addUser, setErrorGetUser } from "../feature/usersSlice";
 import { User } from "../model/User";
 import { newEmployeeInt } from "../types/models";
 
-const ADRESSE = "http://localhost:3004";
+export const ADRESSE = "http://localhost:3004";
 
 /**
  * Function to get employees
