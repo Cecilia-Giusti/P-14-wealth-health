@@ -23,11 +23,7 @@ export const usersSlice = createSlice({
       state.users = action.payload;
     },
     addUser: (state, action: PayloadAction<newEmployeeInt>) => {
-      if (state.users.length > 0) {
-        state.users = [...state.users, action.payload];
-      } else {
-        state.users = [action.payload];
-      }
+      state.users = [...state.users, action.payload];
     },
     setErrorGetUser: (state, action: PayloadAction<boolean>) => {
       state.errorGetUser = action.payload;

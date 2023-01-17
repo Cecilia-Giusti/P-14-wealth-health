@@ -1,10 +1,6 @@
 import axios from "axios";
-import {
-  addUser,
-  setErrorGetUser,
-  setUsersData,
-} from "../../feature/usersSlice";
-import { getUsers, postUser } from "../../service/user";
+import { setErrorGetUser, setUsersData } from "../../feature/usersSlice";
+import { getUsers } from "../../service/user";
 
 jest.mock("axios", () => {
   return { get: jest.fn() };
