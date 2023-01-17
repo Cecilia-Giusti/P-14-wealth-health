@@ -26,13 +26,13 @@ export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<boolean> =>
       }
 
       dispatch(setErrorGetUser(false));
-      dispatch(setUsersData(newDataUsers))
-      return(true);
+      dispatch(setUsersData(newDataUsers));
+      return true;
     })
     .catch((error) => {
       console.error(error);
       dispatch(setErrorGetUser(true));
-      return(false)
+      return false;
     });
 
 /**
@@ -40,19 +40,20 @@ export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<boolean> =>
  * @function
  * @param {newEmployeeInt} userData - new user to post
  * @param {Dispatch<AnyAction>} dispatch - const useAppDispatch
- * @return {Promise<void>}
+ * @return {Promise<boolean>}
  */
 export const postUser = (
   userData: newEmployeeInt,
   dispatch: Dispatch<AnyAction>
-): Promise<void> =>
+): Promise<boolean> =>
   axios
     .post(`${ADRESSE}/users`, userData)
     .then((res) => {
-      dispatch(addUser(res.data));
-      getUsers(dispatch);
+      dispatch(addUser(userData));
+      return true;
     })
     .catch((error) => {
       console.error(error);
       console.log("erreur ici");
+      return false;
     });
