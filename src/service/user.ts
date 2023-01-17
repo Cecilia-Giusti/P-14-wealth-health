@@ -13,7 +13,7 @@ export const ADRESSE = "http://localhost:3004";
  * @param {Dispatch<AnyAction>} dispatch - const useAppDispatch
  * @return {Promise<void>}
  */
-export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<void> =>
+export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<boolean> =>
   axios
     .get(`${ADRESSE}/users`)
     .then((res) => {
@@ -26,11 +26,13 @@ export const getUsers = (dispatch: Dispatch<AnyAction>): Promise<void> =>
       }
 
       dispatch(setErrorGetUser(false));
-      return dispatch(setUsersData(newDataUsers));
+      dispatch(setUsersData(newDataUsers))
+      return(true);
     })
     .catch((error) => {
       console.error(error);
       dispatch(setErrorGetUser(true));
+      return(false)
     });
 
 /**
