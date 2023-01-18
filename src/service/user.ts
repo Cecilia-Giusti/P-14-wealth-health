@@ -54,6 +54,5 @@ export const postUser = (
     })
     .catch((error) => {
       console.error(error);
-      console.log("erreur ici");
       return false;
     });

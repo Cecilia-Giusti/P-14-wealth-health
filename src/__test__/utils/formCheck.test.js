@@ -1,13 +1,14 @@
 import formCheck from "../../utils/formCheck";
 
-
 jest.mock("../../service/user", () => {
   const postFn = jest.fn();
   const thenFN = jest.fn();
-  const catchFN = jest.fn()
-   
+  const catchFN = jest.fn();
+
   return {
-   postUser: postFn, thenFN, catchFN
+    postUser: postFn,
+    thenFN,
+    catchFN,
   };
 });
 
@@ -136,7 +137,7 @@ describe("Given the user is on the form", () => {
     test("Then form should be check and return false", async () => {
       const dispatch = jest.fn();
       const dataForm = {
-        current: null
+        current: null,
       };
       const departementValue = "Human Resources";
       const stateValue = "Arkansas";
@@ -151,5 +152,4 @@ describe("Given the user is on the form", () => {
       expect(check).toBeUndefined();
     });
   });
-
 });

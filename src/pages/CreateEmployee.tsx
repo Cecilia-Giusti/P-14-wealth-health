@@ -17,7 +17,7 @@ import { handleOpenNav } from "../utils/handleOpenNav";
  * @return {JSX.Element}
  */
 const CreateEmployee = (): JSX.Element => {
-  Modal.setAppElement("#root");
+  // Modal.setAppElement("#root");
   const dispatch = useAppDispatch();
 
   const dataNoError = useAppSelector((state) => state.errorForm.dataNoError);
@@ -99,21 +99,38 @@ const CreateEmployee = (): JSX.Element => {
         className="error-message hidden"
         aria-hidden
         aria-disabled
+        data-testid="errorMessage"
       >
         {errorServer
           ? "Please try again later "
           : "Please complete correctly all fields"}
       </span>
-      <form id="form" ref={form} onSubmit={(e) => handleSubmit(e)}>
+      <form
+        id="form"
+        data-testid="formNewEmployee"
+        ref={form}
+        onSubmit={(e) => handleSubmit(e)}
+      >
         <div className="form__content">
           <div className="form__content--left">
             <div className="firstName__content">
               <label htmlFor="firstName">First Name</label>
-              <input type="text" name="firstName" id="firstName" autoFocus />
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                autoFocus
+                data-testid="firstName"
+              />
             </div>
             <div className="lastName__content">
               <label htmlFor="lastName">Last Name</label>
-              <input type="text" name="lastName" id="lastName" />
+              <input
+                type="text"
+                data-testid="lastName"
+                name="lastName"
+                id="lastName"
+              />
             </div>
 
             <div className="birthday__content">
@@ -130,6 +147,7 @@ const CreateEmployee = (): JSX.Element => {
             <div className="startDay__content">
               <label htmlFor="startDay">Start day</label>
               <DatePicker
+             
                 className="dateInput"
                 id="startDay"
                 selected={startDay}
@@ -151,11 +169,16 @@ const CreateEmployee = (): JSX.Element => {
           <div className="form__content--right">
             <div className="street__content">
               <label htmlFor="street">Street</label>
-              <input type="text" name="street" id="street" />
+              <input
+                data-testid="street"
+                type="text"
+                name="street"
+                id="street"
+              />
             </div>
             <div className="city__content">
               <label htmlFor="city">City</label>
-              <input type="text" name="city" id="city" />
+              <input data-testid="city" type="text" name="city" id="city" />
             </div>
             <div className="states__content">
               <label htmlFor="states">State</label>
@@ -169,24 +192,35 @@ const CreateEmployee = (): JSX.Element => {
             </div>
             <div className="zipCode__content">
               <label htmlFor="zipCode">Zip Code</label>
-              <input type="text" name="zipCode" id="zipCode" />
+              <input
+                type="text"
+                data-testid="zipCode"
+                name="zipCode"
+                id="zipCode"
+              />
             </div>
           </div>
         </div>
         <div className="form__buttons">
           {" "}
-          <input type="submit" value="SAVE" className="button" />
+          <input
+            type="submit"
+            value="SAVE"
+            className="button"
+            data-testid="submit"
+          />
           <input
             type="button"
             value="CANCEL"
             className="button"
             onClick={handleCloseModal}
+            data-testid="button-cancel"
           />
         </div>
       </form>
 
       <Modal isOpen={modalIsOpen} className="modal">
-        <button id="confirmationModale" onClick={handleCloseModal}>
+        <button id="confirmationModale" data-testid="button-modal-close" onClick={handleCloseModal}>
           <i className="far fa-times-circle"></i>
         </button>
         <div className="modal__content">
