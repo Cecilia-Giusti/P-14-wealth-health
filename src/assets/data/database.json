@@ -727,42 +727,6 @@
       "state": "Virginia",
       "zipCode": "26890",
       "id": 56
-    },
-    {
-      "firstName": "John",
-      "lastName": "Smith",
-      "birthday": "04/05/1989",
-      "startDay": "12/28/2022",
-      "department": "Engineering",
-      "street": "38 ch des allouettes",
-      "city": "LA",
-      "state": "California",
-      "zipCode": "986638",
-      "id": 57
-    },
-    {
-      "firstName": "John",
-      "lastName": "Smith",
-      "birthday": "04/05/1989",
-      "startDay": "12/28/2022",
-      "department": "Engineering",
-      "street": "38 ch des allouettes",
-      "city": "LA",
-      "state": "California",
-      "zipCode": "986638",
-      "id": 58
-    },
-    {
-      "firstName": "John",
-      "lastName": "Smith",
-      "birthday": "04/05/1989",
-      "startDay": "12/28/2022",
-      "department": "Engineering",
-      "street": "38 ch des allouettes",
-      "city": "LA",
-      "state": "California",
-      "zipCode": "986638",
-      "id": 59
     }
   ]
 }
