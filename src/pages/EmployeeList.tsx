@@ -148,6 +148,7 @@ const EmployeeList = (): JSX.Element => {
   } else {
     return (
       <main
+      data-testid="main-employeesList"
         className={openHeader ? "main employeeList" : "main employeeList close"}
         onClick={() => {
           handleOpenNav(dispatch, true);
@@ -191,7 +192,7 @@ const EmployeeList = (): JSX.Element => {
           ref={tableContainerRef}
           className={scrollBar ? "employees scrollBar" : "employees"}
         >
-          <table className="employees__table">
+          <table className="employees__table" data-testid="employees-table">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
@@ -295,7 +296,7 @@ const EmployeeList = (): JSX.Element => {
               {">>"}
             </button>
           </div>
-          <span className="flex items-center gap-1 pagination__pageNumber">
+          <span className="flex items-center gap-1 pagination__pageNumber" data-testid="number-of-page">
             <p>Page : </p>
             <strong>
               {table.getState().pagination.pageIndex + 1} of{" "}
