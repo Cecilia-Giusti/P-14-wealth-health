@@ -103,7 +103,7 @@ describe("Given the user is on the page createEmployee", () => {
   });
 
   describe("When the user click on cancel button", () => {
-    test("handleCloseModal function is called when close button is clicked", () => {
+    test("Then handleCloseModal function is called when close button is clicked", () => {
       const handleCloseModal = jest.fn(() => {});
 
       provider();
