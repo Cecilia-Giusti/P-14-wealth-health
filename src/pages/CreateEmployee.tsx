@@ -17,7 +17,7 @@ import { handleOpenNav } from "../utils/handleOpenNav";
  * @return {JSX.Element}
  */
 const CreateEmployee = (): JSX.Element => {
-  // Modal.setAppElement("#root");
+ Modal.setAppElement("#root");
   const dispatch = useAppDispatch();
 
   const dataNoError = useAppSelector((state) => state.errorForm.dataNoError);
@@ -85,6 +85,7 @@ const CreateEmployee = (): JSX.Element => {
 
   return (
     <main
+    id="main"
       data-testid="main-createdEmployee"
       className={
         openHeader ? "main createEmployee" : "main createEmployee close"

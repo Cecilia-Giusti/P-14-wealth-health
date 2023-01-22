@@ -38,6 +38,10 @@ jest.mock("@cecigiu2b/dropdown-menu-react", () => {
 
 describe("App", () => {
   it("renders correctly and calls getUsers with dispatch", () => {
+    const root = document.createElement("div");
+    root.setAttribute("id", "root");
+    document.body.append(root);
+
     //Store
     const store = setupStore();
     renderWithProviders(<App />, { store });

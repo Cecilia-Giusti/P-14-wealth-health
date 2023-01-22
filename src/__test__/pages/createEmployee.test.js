@@ -30,6 +30,12 @@ jest.mock("@cecigiu2b/dropdown-menu-react", () => {
   };
 });
 
+const root = () => {
+  const root = document.createElement("div");
+  root.setAttribute("id", "root");
+  document.body.append(root);
+};
+
 const provider = () => {
   //Store
   const store = setupStore();
@@ -45,6 +51,7 @@ const provider = () => {
 
 describe("Given the user is on the page createEmployee", () => {
   test("Then the component should display", () => {
+    root();
     provider();
     expect(screen.getByTestId("main-createdEmployee")).toBeInTheDocument();
     expect(screen.getByTestId("main-createdEmployee")).toHaveClass(
