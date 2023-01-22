@@ -1,0 +1,259 @@
+.employeeList {
+  position: relative;
+  gap: 20px;
+  justify-content: flex-start;
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .errorServer {
+    text-align: center;
+    padding-top: 50px;
+    p {
+      font-size: 2rem;
+      padding-top: 20px;
+    }
+  }
+}
+
+input.button.employeeList__header--button {
+  height: inherit;
+  width: inherit;
+  padding: 8px 10px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: flex-end;
+  margin-right: 55px;
+
+  @media screen and (max-width: 1070px) {
+    margin-right: 5px;
+  }
+
+  &__show {
+    display: flex;
+    gap: 10px;
+    select {
+      border: none;
+      cursor: pointer;
+      border-bottom: 1px solid $color-border-input;
+      padding: 0px 5px;
+      &:focus-visible {
+        box-shadow: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.57);
+      }
+    }
+    label {
+      @media screen and (max-width: 600px) {
+        visibility: hidden;
+      }
+    }
+  }
+  .searchBar {
+    background: $color-row-form;
+    border: 1px solid $color-row-form;
+    position: relative;
+    border-radius: 40px;
+    padding: 5px 10px;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      box-shadow: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.57);
+      border: 1px solid #4d4c4c;
+      box-shadow: inset 3px -4px 6px rgba(217, 217, 217, 0.47);
+    }
+
+    &::-webkit-input-placeholder {
+      @media screen and (max-width: 600px) {
+        color: transparent;
+      }
+    }
+
+    &::-moz-placeholder {
+      @media screen and (max-width: 600px) {
+        color: transparent;
+      }
+    }
+
+    &:-ms-input-placeholder {
+      @media screen and (max-width: 600px) {
+        color: transparent;
+      }
+    }
+
+    &::-ms-input-placeholder {
+      @media screen and (max-width: 600px) {
+        color: transparent;
+      }
+    }
+
+    &::placeholder {
+      @media screen and (max-width: 600px) {
+        color: transparent;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 30px;
+      height: 30px;
+      transition-duration: 200ms;
+      &:hover,
+      &:focus-visible {
+        width: 191px;
+        transition-duration: 200ms;
+      }
+    }
+
+    &__icon {
+      display: none;
+      background: none;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+        position: absolute;
+        color: $color-primary;
+        width: 20px;
+        right: 7%;
+        transform: translateX(-7%);
+        transform: scaleX(-1);
+      }
+
+      &:hover,
+      &:focus-visible {
+        @media screen and (max-width: 600px) {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+.employees {
+  justify-content: center;
+  max-height: 700px;
+  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 80px;
+
+ 
+    overflow-y: scroll;
+    overflow-x: scroll;
+    
+  
+
+  @media screen and (max-height: 845px) {
+    max-height: 600px;
+  }
+
+  .employees__table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      padding: 10px 15px;
+      @media screen and (max-width: 1400px) {
+        padding: 5px 15px;
+      }
+
+      @media screen and (max-width: 1205px) {
+        padding: 5px 8px;
+      }
+      @media screen and (max-width: 1160px) {
+        padding: 5px 4px;
+      }
+
+      @media screen and (max-height: 834px) {
+        padding: 2px 4px;
+      }
+    }
+    thead {
+      border: 1px solid $color-header-form;
+
+      tr {
+        @include titleTable;
+        text-align: center;
+        background-color: $color-header-form;
+        color: black;
+
+        th {
+          i {
+            margin-left: 5px;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    tbody {
+      border: 1px solid $color-row-form;
+      td,
+      th {
+        white-space: nowrap;
+      }
+
+      tr {
+        @include titleForm;
+        font-size: 0.8em;
+
+        &:nth-child(even) {
+          background-color: $color-row-form;
+        }
+
+        &:hover {
+          background-color: $color-row-form-hover;
+          font-weight: 600;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-top: 5%;
+
+  transform: translateX(-50%);
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+  }
+
+  &__pageNumber {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 5px;
+    }
+  }
+}

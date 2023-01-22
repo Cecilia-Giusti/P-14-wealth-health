@@ -1,0 +1,16 @@
+// Import montserra font
+@font-face {
+  font-family: "MontSerra";
+  src: url(./assets/fonts/Montserrat-Regular.ttf) format(truetype);
+  font-display: swap;
+}
+
+// Import AbeeZee font
+@font-face {
+  font-family: "ABeeZee";
+  src: url(./assets/fonts/ABeeZee-Regular.ttf) format(truetype);
+  font-display: swap;
+}
+
+$fontTitle: "MontSerra", sans-serif;
+$fontSubtitle: "ABeeZee", sans-serif;

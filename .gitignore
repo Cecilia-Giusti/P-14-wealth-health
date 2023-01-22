@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# data mock 
+/mock
+
 # testing
 /coverage
 

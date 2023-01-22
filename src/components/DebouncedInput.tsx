@@ -1,0 +1,45 @@
+import { useEffect, useState } from "react";
+
+/**
+ * Research bar input component
+ * @component
+ * @return {JSX.Element}
+ */
+const DebouncedInput = ({
+  value: initialValue,
+  onChange,
+  debounce = 500,
+  ...props
+}: {
+  value: string | number;
+  onChange: (value: string | number) => void;
+  debounce?: number;
+} & Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "onChange"
+>): JSX.Element => {
+  const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onChange(value);
+    }, debounce);
+
+    return () => clearTimeout(timeout);
+  }, [debounce, onChange, value]);
+
+  return (
+    <input
+   
+      {...props}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+  );
+};
+
+export default DebouncedInput;

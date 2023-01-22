@@ -1,0 +1,110 @@
+header {
+  background: rgba(255, 255, 255, 0.57);
+
+  border-radius: 10px 0px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 920px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 400px) {
+    border-radius: 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 200;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: flex-end;
+    border-bottom: 1px solid #fff;
+    @media screen and (max-width: 920px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    img {
+      height: 91px;
+      width: 82px;
+      @media screen and (max-width: 920px) {
+        display: none;
+      }
+    }
+
+    .title {
+      font-family: $fontTitle;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      font-variant: small-caps;
+      color: #006b61;
+
+      @media screen and (max-width: 400px) {
+        font-size: 13px;
+        text-align: start;
+      }
+    }
+  }
+
+  ul {
+    margin-top: 20px;
+  }
+
+  li {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 7px solid transparent;
+    @media screen and (max-width: 650px) {
+      font-size: 12px;
+      border-right: none;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 85%;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 10px;
+    }
+
+    &:hover,
+    .isActive {
+      border-right: 5px solid $color-primary;
+      @media screen and (max-width: 550px) {
+        border-right: none;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    @include titleNav;
+
+    &:hover,
+    .isActive {
+      color: $color-primary;
+    }
+  }
+}
+
+.header--tablet {
+  width: 30%;
+}
