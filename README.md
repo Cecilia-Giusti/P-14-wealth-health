@@ -19,16 +19,21 @@ Wealth Healt uses the following tech stack:
 
     npm install
 
-# Start Sass
-
-    npm run sass
-
 # Start local server
 
     npm run server
 
-_the server is open on port 3000 and is connected to the file database.json_
+_the server is open on port 3004 and is connected to the file database.json_
 
 # Start application
 
     npm start
+
+# Start Sass
+
+    npm run sass
+
+# Start Jest
+
+    npm run test
+    npm run coverage
