@@ -2,11 +2,13 @@ import formCheck from "../../utils/formCheck";
 
 jest.mock("../../service/user", () => {
   const postFn = jest.fn();
+  const getFN = jest.fn(() => true);
   const thenFN = jest.fn();
   const catchFN = jest.fn();
 
   return {
     postUser: postFn,
+    getUsers: getFN,
     thenFN,
     catchFN,
   };
