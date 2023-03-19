@@ -45,8 +45,8 @@ const formCheck = async (
       const newEmployee: newEmployeeInt = {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
-        birthday: birthdayInput.value,
-        startDay: startdayInput.value,
+        birthday: new Date(birthdayInput.value).toJSON(),
+        startDay: new Date(startdayInput.value).toJSON(),
         department: departementSelect,
         street: streetInput.value,
         city: cityInput.value,
